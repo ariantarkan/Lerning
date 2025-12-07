@@ -1,0 +1,33 @@
+body{
+    height: 100vh;  
+}
+.header{
+    height: 10%;
+    width: 100%;
+    background-color: aqua;
+}
+.main{
+    height: 85%;
+    width: 100%;
+    background-color: aquamarine;
+}
+.footer{
+    height: 5%;
+    width: 100%;
+    background-color: blue;
+}
+.h1{
+    color: blanchedalmond;
+    text-align: center;
+    line-height: 215%;
+}
+.h2{
+    color: beige;
+    text-align: center;
+    line-height: 315%;
+}
+.h2-1{
+    color: cyan;
+    text-align: center;
+    line-height: 125%;
+}
