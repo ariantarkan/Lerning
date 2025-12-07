@@ -1,0 +1,45 @@
+body {
+    height: 100vh;
+}
+
+.header {
+    height: 25%;
+    width: 100%;
+    background-color: aqua;
+    text-align: center;
+}
+
+.main {
+    height: 60%;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.footer {
+    height: 15%;
+    width: 100%;
+    background-color: blue;
+}
+
+.h1 {
+    color: blanchedalmond;
+    text-align: center;
+    width: 100px;
+    line-height: 160%;
+    height: 50px;
+    background-color: lime;
+    display: inline-block;
+    margin-top: 65px;
+}
+
+.h2 {
+    color: beige;
+    text-align: center;
+    line-height: 315%;
+}
+
+.h2-1 {
+    color: cyan;
+    text-align: center;
+    line-height: 125%;
+}
