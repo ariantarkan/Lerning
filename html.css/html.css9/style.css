@@ -1,0 +1,58 @@
+body {
+    height: 100vh;
+}
+
+.header {
+    height: 25%;
+    width: 100%;
+    background: linear-gradient(to right , #c2fff1, #84ffe6 , #3fffd7 , #08f9c4 , #00dcad , #00b290 , #008d74 , #007865);
+    text-align: center;
+}
+
+.main {
+    height: 60%;
+    width: 100%;
+    background-image: url(/images/porsh/10.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: chocolate;
+    background-blend-mode: darken;
+
+}
+
+
+
+.footer {
+    height: 15%;
+    width: 100%;
+    background-color: blue;
+}
+
+.h1 {
+    color: blanchedalmond;
+    text-align: center;
+    width: 100px;
+    line-height: 160%;
+    height: 50px;
+    background-image: url(/images/bmw/5.jpg);
+    display: inline-block;
+    margin-top: 65px;
+    padding: 5px 5px 5px 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.h2 {
+    color: beige;
+    text-align: center;
+    line-height: 315%;
+
+}
+
+.h2-1 {
+    color: cyan;
+    text-align: center;
+    line-height: 125%;
+}
