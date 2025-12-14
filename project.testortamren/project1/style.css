@@ -1,0 +1,144 @@
+body {
+    height: 100vh;
+}
+
+.header {
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to left, #7fc9af, #4ea288, #3b9178);
+    margin-bottom: 30px;
+}
+
+.main {
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to right, black, rgba(211, 16, 16, 0.87));
+    margin-bottom: 30px;
+}
+
+.footer {
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to right top, #79af8a, #569169, #437653);
+}
+
+.div-1 {
+    width: 30%;
+    height: 100%;
+    background-image: url(/images/car/27.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-right: 30px;
+    display: inline-block;
+
+}
+
+.div-2 {
+    width: 30%;
+    height: 100%;
+    background-image: url(/images/car/24.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-right: 30px;
+    display: inline-block;
+}
+
+.div-3 {
+    width: 30%;
+    height: 100%;
+    background-image: url(/images/car/28.jpg);
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+}
+
+.div-4 {
+    width: 30%;
+    height: 50%;
+    background-image: url(/images/car/33.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-right: 25px;
+    display: inline-block;
+}
+
+.div-5 {
+    width: 30%;
+    height: 50%;
+    background-image: url(/images/car/34.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-right: 25px;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.div-6 {
+    width: 30%;
+    height: 50%;
+    background-image: url(/images/car/37.jpg);
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+}
+
+.div-7 {
+    width: 30%;
+    height: 49%;
+    background-image: url(/images/car/100.jpg);
+    background-position: center;
+    margin-right: 25px;
+    background-size: cover;
+    display: inline-block;
+}
+
+.div-8 {
+    width: 30%;
+    height: 49%;
+    background-image: url(/images/car/84.jpg);
+    background-position: center;
+    margin-right: 25px;
+    background-size: cover;
+    display: inline-block;
+    border-radius: 100px;
+}
+
+.div-9 {
+    width: 30%;
+    height: 49%;
+    background-image: url(/images/car/59.jpg);
+    background-position: center;
+    margin-right: 25px;
+    background-size: cover;
+    display: inline-block;
+}
+
+.div-10 {
+    width: 30%;
+    height: 100%;
+    background-image: url(/images/car/95.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.div-11 {
+    width: 30%;
+    height: 100%;
+    background-image: url(/images/car/98.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.div-12 {
+    width: 30%;
+    height: 100%;
+    background-image: url(/images/car/73.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-right: 10px;
+    display: inline-block;
+}
