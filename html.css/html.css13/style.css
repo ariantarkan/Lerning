@@ -1,0 +1,100 @@
+body {
+    height: 100vh;
+}
+
+.header {
+    height: 25%;
+    width: 100%;
+    background: linear-gradient(to right, #c2fff1, #84ffe6, #3fffd7, #08f9c4, #00dcad, #00b290, #008d74, #007865);
+    text-align: center;
+}
+
+.main {
+    height: 60%;
+    width: 100%;
+    background-image: url(/images/porsh/10.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: chocolate;
+    background-blend-mode: darken;
+    text-align: center;
+}
+
+
+
+.footer {
+    height: 15%;
+    width: 100%;
+    background-color: blue;
+}
+
+.h1 {
+    color: blanchedalmond;
+    text-align: center;
+    width: 250px;
+    line-height: 145px;
+    height: 160px;
+    background-image: url(/images/bmw/5.jpg);
+    display: inline-block;
+    margin-top: 11px;
+    padding: 5px 5px 5px 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ff5960;
+    background-blend-mode: hard-light;
+    box-shadow: 10px 10px 15px #ff5960;
+    border: 2px solid #ff2630;
+    border-radius: 20px;
+}
+
+.h2 {
+    color: beige;
+    text-align: center;
+    line-height: 315%;
+
+}
+
+.h2-1 {
+    color: cyan;
+    text-align: center;
+    line-height: 125%;
+}
+
+.section {
+    width: 500px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.144);
+    display: inline-block;
+
+}
+
+.imggallry1 , .imggallry2 , .imggallry3{
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.imggallry1 .img-1 {
+    height: 25%;
+
+}
+
+.imggallry1 .img-2 {
+    height: 25%;
+}
+
+.imggallry1 .img-3 {
+    height: 25%;
+}
+
+.imggallry1 .img-4 {
+    height: 25%;
+}
