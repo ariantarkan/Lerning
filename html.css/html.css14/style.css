@@ -62,7 +62,7 @@ body {
     line-height: 125%;
 }
 
-.section1 {
+.section {
     width: 500px;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.144);
@@ -70,7 +70,7 @@ body {
 
 }
 
-.imggallry {
+.imggallry1 , .imggallry2 , .imggallry3{
     width: 30%;
     height: 100%;
     display: inline-block;
@@ -82,19 +82,64 @@ img {
     border-radius: 10px;
 }
 
-.imggallry .img-1 {
+.imggallry1 .img-1 {
     height: 25%;
 
 }
 
-.imggallry .img-2 {
+.imggallry1 .img-2 {
     height: 25%;
 }
 
-.imggallry .img-3 {
+.imggallry1 .img-3 {
     height: 25%;
 }
 
-.imggallry .img-4 {
+.imggallry1 .img-4 {
     height: 25%;
+}
+.imggallry2 .img-1 {
+    height: 25%;
+
+}
+
+.imggallry2 .img-2 {
+    height: 25%;
+}
+
+.imggallry2 .img-3 {
+    height: 25%;
+}
+
+.imggallry2 .img-4 {
+    height: 25%;
+}
+.imggallry3 .img-1 {
+    height: 25%;
+
+}
+
+.imggallry3 .img-2 {
+    height: 25%;
+}
+
+.imggallry3 .img-3 {
+    height: 25%;
+}
+
+.imggallry3 .img-4 {
+    height: 25%;
+}
+.divtext{
+    width: 25%;
+    height: 100%;
+    background-color: #84ffe64f;
+    display: inline-block;
+    border-radius: 20px;
+    text-align: justify;
+    padding: 0 20px 0 20px;
+    vertical-align: top;
+}
+.aboutlorem{
+    text-shadow: 0 0 10px #ff2630;
 }
