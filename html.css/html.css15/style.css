@@ -1,0 +1,237 @@
+body {
+    height: 100vh;
+}
+
+.header {
+    height: 25%;
+    width: 100%;
+    background: linear-gradient(to right, #c2fff1, #84ffe6, #3fffd7, #08f9c4, #00dcad, #00b290, #008d74, #007865);
+    text-align: center;
+}
+
+.main {
+    height: 60%;
+    width: 100%;
+    background-image: url(/images/porsh/10.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: chocolate;
+    background-blend-mode: darken;
+    text-align: center;
+}
+
+
+
+.footer {
+    height: 15%;
+    width: 100%;
+    background-color: blue;
+}
+
+.h1 {
+    color: blanchedalmond;
+    text-align: center;
+    width: 250px;
+    line-height: 145px;
+    height: 160px;
+    background-image: url(/images/bmw/5.jpg);
+    display: inline-block;
+    margin-top: 11px;
+    padding: 5px 5px 5px 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ff5960;
+    background-blend-mode: hard-light;
+    box-shadow: 10px 10px 15px #ff5960;
+    border: 2px solid #ff2630;
+    border-radius: 20px;
+}
+
+.h2 {
+    color: beige;
+    text-align: center;
+    line-height: 315%;
+
+}
+
+.h2-1 {
+    color: cyan;
+    text-align: center;
+    line-height: 125%;
+}
+
+.section {
+    width: 500px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.144);
+    display: inline-block;
+
+}
+
+.imggallry1,
+.imggallry2,
+.imggallry3 {
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.imggallry1 .img-1 {
+    height: 25%;
+
+}
+
+.imggallry1 .img-2 {
+    height: 25%;
+}
+
+.imggallry1 .img-3 {
+    height: 25%;
+}
+
+.imggallry1 .img-4 {
+    height: 25%;
+}
+
+.imggallry2 .img-1 {
+    height: 25%;
+
+}
+
+.imggallry2 .img-2 {
+    height: 25%;
+}
+
+.imggallry2 .img-3 {
+    height: 25%;
+}
+
+.imggallry2 .img-4 {
+    height: 25%;
+}
+
+.imggallry3 .img-1 {
+    height: 25%;
+
+}
+
+.imggallry3 .img-2 {
+    height: 25%;
+}
+
+.imggallry3 .img-3 {
+    height: 25%;
+}
+
+.imggallry3 .img-4 {
+    height: 25%;
+}
+
+.divtext {
+    width: 25%;
+    height: 100%;
+    background-color: #84ffe64f;
+    display: inline-block;
+    border-radius: 20px;
+    text-align: justify;
+    padding: 0 20px 0 20px;
+    vertical-align: top;
+}
+
+.aboutlorem {
+    text-shadow: 0 0 10px #ff2630;
+}
+
+.registersection {
+    width: 30%;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    display: inline-block;
+    text-align: justify;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.bodysection {
+    text-align: center;
+}
+
+.registersection h1 {
+    font-family: tahoma;
+    background: linear-gradient(to right, #faff00, #00e0ff);
+    background-clip: text;
+    display: inline-block;
+    color: transparent;
+}
+
+.spanh5 {
+    color: #ff2630;
+}
+
+.formsection {
+    text-align: center;
+}
+
+.formsection .halfinput {
+    width: 45%;
+    display: inline-block;
+    text-align: justify;
+}
+
+input {
+    width: 90%;
+    border: none;
+    background: linear-gradient(to right, #ff8a00, #dbff00);
+    border-radius: 20px;
+    height: 30px;
+    color: #ff0000;
+    box-shadow: 0px 0px 15px black inset;
+}
+
+.formsection .lineinput {
+    width: 90%;
+    display: inline-block;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.checkboxinput {
+    text-align: justify;
+}
+
+.labelcheckbox {
+    vertical-align: super;
+    font-size: 10px;
+}
+
+.checkbox {
+    width: 10px;
+    vertical-align: sub;
+    box-shadow: none;
+}
+
+button {
+    text-align: center;
+    width: 200px;
+    height: 35px;
+    border-radius: 100px;
+    background-color: #ff8a00;
+    cursor: pointer;
+}
+
+.lineinput input::placeholder {
+    color: mediumturquoise;
+}
+
+.asingup {
+    cursor: grab;
+}
