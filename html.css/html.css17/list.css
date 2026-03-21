@@ -1,0 +1,248 @@
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    word-spacing: -4px;
+}
+
+.header {
+    height: 10%;
+
+}
+
+.header {
+    text-align: center;
+    line-height: 65px;
+    background-color: #2B3A48;
+    width: 100%;
+}
+
+.listSection {
+    list-style: none;
+    margin: 16px 8px 16px 8px;
+}
+
+.listIteamBase {
+    margin-top: 25px;
+    border: 1px solid;
+    height: 70px;
+}
+
+.internalList {
+    height: 100%;
+}
+
+.internalList .listItemInternal {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.boxshadow {
+    box-shadow: 10px 0 15px gray;
+}
+
+.star {
+    color: rgb(255, 238, 0);
+    font-size: 20px;
+    line-height: 3.5;
+}
+
+.progressListItemInternal {
+    padding-top: 20px;
+    margin-top: 7px;
+    
+}
+
+.divListItemInternal {
+    margin: 10px 0px 5px 5px;
+    font-size: 15px;        
+}
+
+.imgInternalIcon {
+    margin:  0px 0px -4px 10px;
+}
+
+.spanProgress {
+    margin:  0px 0px -4px 10px;
+}
+
+.ratingStar {
+    margin:  16px 0px -22px 4px;
+}
+
+.spanStarRating {
+    margin-left: 5px;
+    font-size: 15px;
+    color:  skyblue;
+}
+
+.spanStartReaction {
+    margin-left: 5px;
+    font-size: 15px;
+    color: skyblue;
+}
+
+.buttonListItemInternal {
+    width: 180px;
+    height: 30px;
+    border-radius: 26px;
+    margin:  20px 0px -30px 85px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 136, 0);
+}
+
+.divImgBoxshadow {
+    width: 50px;
+    height: 50px;
+    background-image: url(/images/car/IMG_20260208_234432_038.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(206, 206, 206);
+    background-blend-mode: darken;
+    margin:  10px 0px 0px 20px;
+    display: inline-block;
+}
+
+.aSampelWebsite {
+    margin:  10px 0px 0px 10px;
+    vertical-align: 20px;
+}
+
+.aCodeyad {
+    text-decoration: none;
+    cursor: pointer;
+    color: skyblue;
+}
+
+.aButtonListItemInternal {
+    text-decoration: none;
+    cursor: pointer;
+    color: skyblue;
+}    
+
+.spanHeader {
+    font-size: 25px;
+    color: white;
+}
+
+@media (max-width: 992px) {
+  .listItemInternal {
+    width: 50%; 
+  }
+
+  .buttonListItemInternal {
+    margin: 20px auto;
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .header {
+    font-size: 18px;
+    line-height: 50px;
+  }
+
+  .listIteamBase {
+    height: auto;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .internalList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 10px;
+  }
+
+  .internalList .listItemInternal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+  }
+
+  .divImgBoxshadow {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px 0 10px;
+    border-radius: 5px;
+  }
+
+  .aSampelWebsite {
+    display: block;
+    line-height: 60px;
+    font-size: 25px;
+    margin: 10px 5px 10px 0px;
+  }
+
+  .divListItemInternal {
+    font-size: 14px;
+    margin: 10px 10px 5px 5px;
+  }
+
+  .progressListItemInternal {
+    width: 65%;
+    height: 8px;
+  }
+
+  .spanProgress {
+    font-size: 13px;
+    margin: 7px 5px -4px 15px;
+  }
+
+  .spanStarRating {
+    font-size: 13px;
+  }
+
+  .spanStartReaction {
+    font-size: 13px;
+    margin-left: 5px;
+  }
+
+  .imgInternalIcon {
+    margin: 8px 0px -4px 10px;
+    width: 16px;
+  }
+
+  .ratingStar {
+    margin-top: -25px;
+    margin-right: 5px;
+  }
+
+  .star {
+    font-size: 17px;
+    line-height: 2;
+  }
+  .spanHeader {
+    font-size: 30px;
+    color: white;
+  }
+
+  .buttonListItemInternal {
+    width: 100%;
+    height: 35px;
+    margin: 10px 0 0 0;
+    border-radius: 20px;
+    font-size: 15px;
+    display: block;
+  }
+
+  .aButtonListItemInternal {
+    font-size: 14px;
+    color: white;
+  }
+}
