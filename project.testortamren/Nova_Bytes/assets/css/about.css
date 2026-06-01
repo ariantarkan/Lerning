@@ -1,0 +1,440 @@
+@font-face {
+  font-family: 'MyPersianFont';
+  src: url('../fonts/Vazir-Bold.woff2') format('woff2'); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+:root {
+  --primary-color: #4a47a3;
+  --secondary-color: #6c63ff;
+  --text-color: #333;
+  --bg-color: #fefefe;
+}
+
+body {
+  font-family: 'MyPersianFont', Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.about-section {
+  padding: 60px 20px;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1025);
+  color: white;
+  flex: 1;
+}
+
+.about-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  border-bottom: 3px solid #fff;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.about-section p {
+  margin-bottom: 18px;
+  font-size: 1.16rem;
+  line-height: 1.5;
+}
+
+.tech-stack {
+    margin-bottom: 40px;
+}
+
+.tech-stack h3,
+.team-intro h3 {
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.tech-stack ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-stack ul li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.tech-stack ul li:hover {
+  background: white;
+  color: var(--primary-color);
+  cursor: default;
+}
+
+.team-intro {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-member {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid #fff;
+}
+
+.team-member h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.team-member p {
+  margin: 0;
+  font-weight: 500;
+  color: #e6e6fa;
+}
+
+.contact-cta {
+  margin-top: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.contact-cta a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.contact-cta a:hover {
+  color: #c9c6ff;
+}
+
+/* Footer */
+
+.site-footer {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    padding: 25px 20px;
+    font-family: 'MyPersianFont', Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.footer-brand span {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.footer-actions button {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-actions button:hover {
+    background-color: #5a53d8;
+}
+
+/* Modal */
+
+.modal {
+    display: none; /* پنهان */
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #22224a;
+    margin: 12% auto;
+    padding: 30px;
+    border-radius: 14px;
+    max-width: 480px;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    color: #efefef;
+    font-family: 'MyPersianFont', Arial, sans-serif;
+    animation: animatetop 0.4s;
+}
+
+/* حذف خط زیرین از همه لینک‌ها در پاپ‌آپ‌ها و فوتر */
+
+.modal-content a,
+.footer-actions button,
+.footer-brand span {
+    text-decoration: none !important;
+    color: #aabbff;
+    cursor: pointer;
+}
+
+.footer-actions button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none !important;
+  background-color: var(--secondary-color);
+  padding: 10px 22px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-right: 10px;
+}
+
+.footer-actions button:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(106, 60, 255, 0.7); /* بهتر است کمی نور برای دسترسی بماند */
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(74, 71, 163, 0.7);
+}
+
+/* جایگزین box-shadow قبلی برای team-member تا رنگ جدید استفاده شود */
+.team-member {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* پیش‌فرض */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-actions button:hover {
+  background-color: #5a53d8;
+  box-shadow: 0 0 15px rgba(74, 71, 163, 0.7);
+}
+
+.modal-team-members .team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(74, 71, 163, 0.7) !important;
+}
+
+.modal-content a:hover {
+    color: var(--secondary-color);
+}
+
+/* تیم ممبرهای داخل پاپ‌آپ */
+
+.modal-team-members {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.modal-team-members .team-member {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 12px;
+    min-width: 160px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+}
+
+.modal-team-members .team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.modal-team-members .team-member img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 2.5px solid #aabbff;
+}
+
+.modal-team-members .team-member h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+/* دکمه بستن */
+
+.close-button {
+    position: absolute;
+    top: 2px;
+    right: 18px;
+    font-size: 30px;
+    color: #aaa;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #4e2796;
+}
+
+.modal-h3 {
+    position: relative;
+    display: inline-block;
+    right: 5px
+}    
+
+.footer-actions button svg {
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.modal-team-members .team-member {
+    position: relative; 
+}
+
+/* این کد لینک را روی کل محدوده کارت پخش می‌کند */
+.modal-team-members .team-member a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.back-home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #2c2c2c; /* رنگ پس‌زمینه دکمه متناسب با تم دارک */
+    color: #ffffff; /* رنگ آیکون */
+    border-radius: 50%; /* دایره‌ای کردن دکمه */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.back-home-btn:hover {
+    background-color: #444444; /* رنگ هنگام رفتن ماوس روی دکمه */
+    transform: scale(1.1); /* کمی بزرگ شدن در حالت هاور */
+    color: #00ffcc; /* تغییر رنگ آیکون (اختیاری) */
+}
+
+.back-home-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* ریسپانسیو */
+
+@media (max-width: 600px) {
+    .modal-team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media(max-width: 600px){
+  .team-intro {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member {
+    width: 80%;
+  }
+}
+
+@media(max-width: 360px){
+  .footer-actions button {
+  margin: 0;
+}
+  }
+
+

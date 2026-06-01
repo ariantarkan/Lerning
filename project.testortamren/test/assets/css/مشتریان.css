@@ -1,0 +1,373 @@
+:root {
+  --primary-blue: #3b82f6;
+  --primary-blue-hover: #2563eb;
+  --bg-body: #f3f4f6;
+  --bg-card: #ffffff;
+  --border-color: #e5e7eb;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+}
+@font-face {
+  font-family: "MyPersianFont";
+  src: url("/project.testortamren/Nova_Bytes/assets/fonts/Vazir.woff2")
+    format("woff2");
+}
+
+body {
+  font-family: "MyPersianFont", Arial, sans-serif; /* فونت‌های پیش‌فرض */
+  background-color: var(--bg-body);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* کانتینر اصلی */
+.ticket-container {
+  background-color: var(--bg-card);
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+/* هدر */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9fafb;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-title {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  color: var(--text-dark);
+}
+
+.header-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.status-badge {
+  background-color: #fef3c7;
+  color: #b45309;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* دکمه ها */
+.btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-red {
+  background-color: #ef4444;
+  color: white;
+}
+.btn-red:hover {
+  background-color: #dc2626;
+}
+
+.btn-blue {
+  background-color: var(--primary-blue);
+  color: white;
+}
+.btn-blue:hover {
+  background-color: var(--primary-blue-hover);
+}
+
+.btn-outline {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
+}
+.btn-outline:hover {
+  background-color: #f9fafb;
+}
+
+/* بدنه پیام ها */
+.messages-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ساختار پیام */
+.message-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.message-row.admin {
+  align-items: flex-end;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+.message-row.admin .user-info {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+.avatar.user {
+  background-color: #d1d5db;
+  color: #4b5563;
+}
+.avatar.admin {
+  background-color: var(--primary-blue);
+}
+
+.bubble {
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 80%;
+  position: relative;
+}
+.bubble.user {
+  background-color: #f3f4f6;
+  color: #374151;
+  border-top-left-radius: 0;
+  border: 1px solid var(--border-color);
+}
+.bubble.admin {
+  background-color: #eff6ff;
+  color: #1e3a8a;
+  border-top-right-radius: 0;
+  border: 1px solid #bfdbfe;
+}
+
+/* دکمه ویرایش روی پیام ادمین */
+.edit-btn {
+  position: absolute;
+  left: -12px;
+  top: -12px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  opacity: 0;
+  transition:
+    opacity 0.2s,
+    color 0.2s;
+}
+.bubble.admin:hover .edit-btn {
+  opacity: 1;
+}
+.edit-btn:hover {
+  color: var(--primary-blue);
+  background-color: #f9fafb;
+}
+.edit-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* فوتر */
+.footer {
+  padding: 20px;
+  background-color: #f9fafb;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* پاپ آپ (Modal) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: var(--bg-card);
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-body textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  min-height: 120px;
+}
+.modal-body textarea:focus {
+  border-color: var(--primary-blue);
+}
+
+.modal-footer {
+  padding: 16px 20px;
+  background-color: #f9fafb;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* دکمه‌های شناور سمت راست */
+.side-buttons {
+  position: fixed;
+  top: 10%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 2000;
+}
+
+.side-btn {
+  width: 120px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-dark);
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+
+.side-btn:hover {
+  background: #f3f4f6;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  transform: translateX(-4px);
+}
+
+.side-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--primary-blue);
+}
+
+.side-btn span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ریسپانسیو دکمه‌های شناور برای موبایل */
+@media (max-width: 768px) {
+
+  .side-buttons {
+    top: auto;          /* انتقال به پایین صفحه */
+    bottom: 20px;
+    right: 15px;
+    transform: none;    /* حذف translateY */
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .side-btn {
+    width: 50px;           /* دکمه جمع‌وجور */
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+
+  .side-btn span {
+    display: none;         /* متن پنهان می‌شود */
+  }
+
+  .side-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* در موبایل ترجیحاً حرکت نکند */
+  .side-btn:hover {
+    transform: none;
+  }
+}

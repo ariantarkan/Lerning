@@ -1,0 +1,169 @@
+/* Custom Persian Font */
+@font-face {
+  font-family: 'MyPersianFont';
+  src: url('/project.testortamren/Nova_Bytes/assets/fonts/Vazir-Bold.woff2') format('woff2'); 
+}
+
+/* Base settings and dark theme */
+body {
+    font-family: Tahoma, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0c10; /* Dark background */
+    color: #c5c6c7;
+    margin: 0;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.team-section {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.section-title {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.5); /* Neon text shadow */
+}
+
+.back-home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #2c2c2c; /* رنگ پس‌زمینه دکمه متناسب با تم دارک */
+    color: #ffffff; /* رنگ آیکون */
+    border-radius: 50%; /* دایره‌ای کردن دکمه */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.back-home-btn:hover {
+    background-color: #444444; /* رنگ هنگام رفتن ماوس روی دکمه */
+    transform: scale(1.1); /* کمی بزرگ شدن در حالت هاور */
+    color: #00ffcc; /* تغییر رنگ آیکون (اختیاری) */
+}
+
+.back-home-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Card grid layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Individual member card design */
+.team-card {
+    background: linear-gradient(145deg, #1f2833, #11151c);
+    border-radius: 15px;
+    padding: 30px 20px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #1f2833;
+}
+
+/* Hover effect (Neon glow and card lift) */
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: #8a2be2; /* Neon purple */
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.4), 0 0 40px rgba(65, 105, 225, 0.2);
+}
+
+/* Profile image */
+.member-img-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #45a29e; /* Turquoise blue */
+    transition: all 0.4s ease;
+}
+
+.team-card:hover .member-img-wrapper {
+    border-color: #8a2be2;
+    transform: scale(1.05);
+}
+
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Member information */
+.member-name {
+    color: #ffffff;
+    margin: 10px 0 5px;
+    font-size: 1.5rem;
+}
+
+.member-role {
+    color: #45a29e;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.member-bio {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #a0a4a8;
+}
+
+/* Skill tags */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.skill-tag {
+    background-color: rgba(69, 162, 158, 0.1);
+    color: #45a29e;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(69, 162, 158, 0.3);
+}
+
+.team-card:hover .skill-tag {
+    background-color: rgba(138, 43, 226, 0.1);
+    color: #c77dff;
+    border-color: rgba(138, 43, 226, 0.3);
+}
+
+/* Social media links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #c5c6c7;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #8a2be2; /* Change color on hover */
+}

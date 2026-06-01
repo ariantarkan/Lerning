@@ -1,0 +1,64 @@
+/* Styles for the main container wrapping everything */
+.mediasection {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center;    /* Centers children horizontally */
+}
+
+/* Styles for the video container */
+.videoBox {
+    width: 80%; /* Sets the desired width for the box */
+    border-radius: 2rem; /* Rounds the corners */
+    overflow: hidden; /* Ensures the video doesn't overflow the rounded corners */
+    outline: 0.3rem dashed red; /* Adds a dashed red border outline */
+    outline-offset: 0.5rem; /* Creates space between the container and the outline */
+    height: 50vh; /* Sets height to 50% of the viewport height */
+}
+
+/* Styles for the row containing music items */
+.musicBox {
+    display: flex; /* Aligns music items horizontally by default */
+    gap: 1rem; /* Adds space between each music item */
+}
+
+/* Styles for each individual music item (image + audio) */
+.musicitem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Stacks the image and audio vertically */
+    margin-top: 2rem;
+    gap: 1rem; /* Adds space between the image and the audio player */
+}
+
+/* Styles for the video element itself */
+video {
+    width: 100%; /* Video takes up the full width of its parent (.videoBox) */
+    height: 100%; /* Video takes up the full height of its parent */
+    display: block; /* Removes the default empty space below inline elements */
+    object-fit: cover; /* Ensures the video covers the box without distortion */
+}
+
+/* Styles for the thumbnail image inside the music item */
+.musicitem img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover; /* Prevents the image from stretching */
+    border-radius: 100%; /* Makes the image perfectly circular */
+    box-shadow: 0 0 1rem black; /* Adds a dark shadow around the image */
+}
+
+/* Responsive design for tablets and mobile devices (screens smaller than 768px) */
+@media (max-width: 768px) {
+    /* Reduces the height of the video box on smaller screens */
+    .videoBox {
+        height: 25vh;
+    }
+
+    /* Stacks the music items vertically instead of horizontally */
+    .musicBox {
+        flex-direction: column;
+    }
+}

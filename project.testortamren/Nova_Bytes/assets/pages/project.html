@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <!-- متاتگ viewport برای تنظیم مقیاس صفحه در موبایل (بسیار مهم برای ریسپانسیو) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروژه‌ها - Nova Bytes</title>
+    <!-- مسیر فایل CSS اصلی شما -->
+    <link rel="stylesheet" href="/project.testortamren/Nova_Bytes/assets/css/project.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- هدر صفحه -->
+        <header style="text-align: center; margin-top: 40px; margin-bottom: 30px; color: white;">
+            <h1>نمونه کارهای ما</h1>
+            <p>نگاهی به پروژه‌هایی که با عشق و تکنولوژی ساخته‌ایم.</p>
+        </header>
+
+        <!-- بخش دکمه‌های دسته‌بندی (فیلتر) -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProjects('all', this)">همه پروژه‌ها</button>
+            <button class="filter-btn" onclick="filterProjects('web', this)">پروژه‌های وب</button>
+            <button class="filter-btn" onclick="filterProjects('game', this)">بازی‌سازی</button>
+        </div>
+
+        <!-- تگ اصلی برای قرارگیری کارت‌های پروژه (توسط جاوااسکریپت پر می‌شود) -->
+        <main id="project-grid" class="project-grid"></main>
+    </div>
+
+    <!-- ساختار پاپ‌آپ (مودال) برای نمایش توضیحات کامل -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <!-- دکمه بستن پاپ‌آپ -->
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">عنوان پروژه</h2>
+            <p id="modal-desc">توضیحات کامل پروژه در اینجا قرار می‌گیرد...</p>
+        </div>
+    </div>
+</body>
+    <Script src="/project.testortamren/Nova_Bytes/assets/js/projectsData.js"></Script>
+</html>

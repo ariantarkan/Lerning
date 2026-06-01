@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پشتیبانی حرفه‌ای</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Tahoma, sans-serif;
+      }
+
+      body {
+        background:
+          linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
+          url("") center/cover;
+
+        min-height: 100vh;
+        padding: 20px;
+        overflow-x: hidden;
+        color: white;
+      }
+
+      /* =======================
+           انیمیشن‌ها
+        ======================= */
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes glow {
+        0% {
+          box-shadow: 0 0 10px #00bfff;
+        }
+
+        50% {
+          box-shadow: 0 0 25px #00bfff;
+        }
+
+        100% {
+          box-shadow: 0 0 10px #00bfff;
+        }
+      }
+
+      /* =======================
+           دکمه برگشت
+        ======================= */
+
+      .back-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        text-decoration: none;
+        background: linear-gradient(90deg, #007cf0, #00c6ff);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 40px;
+        font-weight: bold;
+        transition: 0.4s;
+        z-index: 999;
+      }
+
+      .back-btn:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 20px #00c6ff;
+      }
+
+      /* =======================
+           کانتینر اصلی
+        ======================= */
+
+      .support-container {
+        display: flex;
+        gap: 20px;
+        max-width: 1400px;
+        margin: 80px auto 0;
+        flex-wrap: wrap;
+        animation: fadeUp 1s ease;
+      }
+
+      /* =======================
+           چت
+        ======================= */
+
+      .chat-box {
+        flex: 2;
+        min-width: 350px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(15px);
+        border-radius: 25px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .chat-header {
+        background: linear-gradient(90deg, #007cf0, #00c6ff);
+        padding: 20px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .chat-messages {
+        height: 450px;
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .message {
+        padding: 14px 18px;
+        border-radius: 18px;
+        max-width: 75%;
+        line-height: 1.8;
+        animation: fadeUp 0.5s ease;
+      }
+
+      .support {
+        background: rgba(255, 255, 255, 0.12);
+        align-self: flex-start;
+        border-bottom-right-radius: 0;
+      }
+
+      .user {
+        background: linear-gradient(90deg, #007cf0, #00c6ff);
+        align-self: flex-end;
+        border-bottom-left-radius: 0;
+      }
+
+      .chat-input {
+        display: flex;
+        padding: 15px;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .chat-input input {
+        flex: 1;
+        padding: 14px;
+        border: none;
+        border-radius: 40px;
+        background: rgba(255, 255, 255, 0.12);
+        color: white;
+        outline: none;
+      }
+
+      .chat-input button {
+        padding: 14px 25px;
+        border: none;
+        border-radius: 40px;
+        background: linear-gradient(90deg, #007cf0, #00c6ff);
+        color: white;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+
+      .chat-input button:hover {
+        transform: scale(1.08);
+        animation: glow 1s infinite;
+      }
+
+      /* =======================
+           تیکت‌ها
+        ======================= */
+
+      .ticket-panel {
+        flex: 1;
+        min-width: 320px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(15px);
+        border-radius: 25px;
+        padding: 20px;
+      }
+
+      .ticket-panel h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #00c6ff;
+      }
+
+      .ticket-form input,
+      .ticket-form textarea {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 12px;
+        border: none;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.12);
+        color: white;
+        outline: none;
+      }
+
+      .ticket-form textarea {
+        resize: none;
+        height: 120px;
+      }
+
+      .ticket-form button {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(90deg, #007cf0, #00c6ff);
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.4s;
+      }
+
+      .ticket-form button:hover {
+        transform: translateY(-3px);
+        animation: glow 1s infinite;
+      }
+
+      /* =======================
+           لیست تیکت‌ها
+        ======================= */
+
+      .ticket-list {
+        margin-top: 25px;
+        max-height: 350px;
+        overflow-y: auto;
+      }
+
+      .ticket-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        transition: 0.4s;
+        cursor: pointer;
+      }
+
+      .ticket-item:hover {
+        transform: scale(1.03);
+        background: rgba(0, 198, 255, 0.2);
+      }
+
+      .ticket-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #00c6ff;
+      }
+
+      .ticket-status {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .ticket-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .ticket-actions button {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        transition: 0.3s;
+      }
+
+      .open-btn {
+        background: #007cf0;
+      }
+
+      .close-btn {
+        background: #ff4d6d;
+      }
+
+      .ticket-actions button:hover {
+        transform: scale(1.05);
+      }
+
+      /* =======================
+           مودال تیکت
+        ======================= */
+
+      .ticket-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .ticket-modal-content {
+        width: 90%;
+        max-width: 500px;
+        background: #111;
+        border-radius: 25px;
+        padding: 25px;
+        animation: fadeUp 0.5s ease;
+      }
+
+      .ticket-modal-content h3 {
+        color: #00c6ff;
+        margin-bottom: 15px;
+      }
+
+      .ticket-modal-content p {
+        line-height: 2;
+        margin-bottom: 20px;
+      }
+
+      .close-modal {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 12px;
+        background: #ff4d6d;
+        color: white;
+        cursor: pointer;
+      }
+
+      /* =======================
+           موبایل
+        ======================= */
+
+      @media (max-width: 900px) {
+        .support-container {
+          flex-direction: column;
+        }
+
+        .chat-messages {
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="index.html" class="back-btn"> ⬅ بازگشت </a>
+
+    <div class="support-container">
+      <!-- چت -->
+      <div class="chat-box">
+        <div class="chat-header">پشتیبانی آنلاین</div>
+
+        <div class="chat-messages" id="chat">
+          <div class="message support">سلام 👋 خوش اومدی به پشتیبانی</div>
+        </div>
+
+        <div class="chat-input">
+          <input type="text" id="msgInput" placeholder="پیام بنویس..." />
+          <button onclick="sendMessage()">ارسال</button>
+        </div>
+      </div>
+
+      <!-- پنل تیکت -->
+      <div class="ticket-panel">
+        <h2>مدیریت تیکت‌ها</h2>
+
+        <div class="ticket-form">
+          <input type="text" id="ticketTitle" placeholder="موضوع تیکت" />
+
+          <textarea id="ticketText" placeholder="متن کامل تیکت"></textarea>
+
+          <button onclick="createTicket()">ثبت تیکت</button>
+        </div>
+
+        <div class="ticket-list" id="ticketList"></div>
+      </div>
+    </div>
+
+    <!-- مودال -->
+    <div class="ticket-modal" id="ticketModal">
+      <div class="ticket-modal-content">
+        <h3 id="modalTitle"></h3>
+
+        <p id="modalText"></p>
+
+        <button class="close-modal" onclick="closeModal()">بستن</button>
+      </div>
+    </div>
+
+    <script>
+      /* ====================
+           چت
+        ==================== */
+
+      function sendMessage() {
+        let input = document.getElementById("msgInput");
+        let chat = document.getElementById("chat");
+
+        if (input.value.trim() === "") return;
+
+        let userMsg = document.createElement("div");
+
+        userMsg.className = "message user";
+
+        userMsg.innerText = input.value;
+
+        chat.appendChild(userMsg);
+
+        chat.scrollTop = chat.scrollHeight;
+
+        setTimeout(() => {
+          let supportMsg = document.createElement("div");
+
+          supportMsg.className = "message support";
+
+          supportMsg.innerText = "پیام شما دریافت شد ✅";
+
+          chat.appendChild(supportMsg);
+
+          chat.scrollTop = chat.scrollHeight;
+        }, 1000);
+
+        input.value = "";
+      }
+
+      /* ====================
+           تیکت‌ها
+        ==================== */
+
+      let tickets = [];
+
+      function createTicket() {
+        let title = document.getElementById("ticketTitle").value;
+
+        let text = document.getElementById("ticketText").value;
+
+        if (title === "" || text === "") return;
+
+        let ticket = {
+          id: Date.now(),
+          title,
+          text,
+          status: "باز",
+        };
+
+        tickets.push(ticket);
+
+        renderTickets();
+
+        document.getElementById("ticketTitle").value = "";
+        document.getElementById("ticketText").value = "";
+      }
+
+      function renderTickets() {
+        let list = document.getElementById("ticketList");
+
+        list.innerHTML = "";
+
+        tickets.forEach((ticket) => {
+          let item = document.createElement("div");
+
+          item.className = "ticket-item";
+
+          item.innerHTML = `
+                
+                    <div class="ticket-title">
+                        ${ticket.title}
+                    </div>
+
+                    <div class="ticket-status">
+                        وضعیت: ${ticket.status}
+                    </div>
+
+                    <div class="ticket-actions">
+
+                        <button class="open-btn"
+                            onclick="openTicket(${ticket.id})">
+
+                            باز کردن
+
+                        </button>
+
+                        <button class="close-btn"
+                            onclick="closeTicket(${ticket.id})">
+
+                            بستن
+
+                        </button>
+
+                    </div>
+                `;
+
+          list.appendChild(item);
+        });
+      }
+
+      function openTicket(id) {
+        let ticket = tickets.find((t) => t.id === id);
+
+        document.getElementById("modalTitle").innerText = ticket.title;
+
+        document.getElementById("modalText").innerText = ticket.text;
+
+        document.getElementById("ticketModal").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("ticketModal").style.display = "none";
+      }
+
+      function closeTicket(id) {
+        tickets = tickets.map((ticket) => {
+          if (ticket.id === id) {
+            ticket.status = "بسته شد ❌";
+          }
+
+          return ticket;
+        });
+
+        renderTickets();
+      }
+    </script>
+  </body>
+</html>

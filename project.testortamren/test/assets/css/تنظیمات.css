@@ -1,0 +1,418 @@
+@font-face {
+  font-family: "MyPersianFont";
+  src: url("/project.testortamren/Nova_Bytes/assets/fonts/Vazir.woff2")
+    format("woff2");
+}
+
+/* متغیرهای پایه (لایت مود) */
+:root {
+  --bg-color: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --primary: #3b82f6;
+  --border-color: #e5e7eb;
+  --hover-bg: #f9fafb;
+  --header-bg: #fafbfc;
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+  --sidebar-bg: #4e73df;
+}
+
+/* متغیرهای دارک مود */
+body.dark-mode {
+  --bg-color: #111827;
+  --card-bg: #1f2937;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --primary: #60a5fa;
+  --border-color: #374151;
+  --hover-bg: #374151;
+  --header-bg: #1f2937;
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+  --sidebar-bg: #1a202c; /* رنگ تیره‌تر برای سایدبار در حالت دارک */
+}
+
+body {
+  font-family:
+    "MyPersianFont",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Tahoma,
+    sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- استایل‌های سایدبار --- */
+.sidebar {
+  width: 260px;
+  background-color: #4e73df; /* رنگ آبی مشابه عکس */
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+  transition:
+    right 0.3s ease,
+    background-color 0.3s;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000; /* رنگ مشکی مثل عکس */
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.menu-item {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000000; /* رنگ مشکی منوها مثل عکس */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.menu-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  background-color: rgb(29, 65, 141); /* رنگ سرمه ای تیره برای اکتیو/هاور */
+  color: white;
+}
+.menu-item:hover {
+  transform: translateY(-2px);
+}
+
+/* --- استایل‌های محتوای تنظیمات --- */
+.settings-container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--header-bg);
+}
+
+.card-header svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-left: 12px;
+}
+
+html[dir="ltr"] .card-header svg {
+  margin-left: 0;
+  margin-right: 12px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+.setting-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.setting-item:last-child {
+  border-bottom: none;
+}
+.setting-item:hover {
+  background-color: var(--hover-bg);
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 2;
+}
+html[dir="ltr"] .chevron {
+  transform: rotate(180deg);
+}
+
+/* سوئیچ‌ها */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: var(--primary);
+}
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.custom-select {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  outline: none;
+}
+
+/* --- استایل‌های پاپ‌آپ --- */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-overlay);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+.modal-overlay.active {
+  display: flex;
+}
+.modal-box {
+  background-color: var(--card-bg);
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: inherit;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-cancel {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+.btn-save {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* --- المان‌های مخصوص موبایل --- */
+.mobile-header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.menu-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-main);
+  padding: 5px;
+}
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+
+/* === مدیا کوئری‌ها برای ریسپانسیو === */
+
+/* دیسپلی 1080 و بالاتر (طراحی پیش‌فرض اعمال می‌شود) */
+@media (min-width: 1080px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* تبلت‌ها */
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sidebar {
+    width: 220px;
+  }
+}
+
+/* موبایل‌ها */
+@media (max-width: 768px) {
+  body {
+    display: block;
+  } /* در موبایل ساختار کنار هم لغو می‌شود */
+
+  .mobile-header {
+    display: flex;
+  } /* نمایش هدر موبایل (همبرگری) */
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px; /* مخفی در سمت راست */
+    width: 260px;
+    z-index: 1002;
+  }
+  .sidebar.open {
+    right: 0;
+  } /* نمایش سایدبار با باز شدن */
+
+  .sidebar-backdrop.open {
+    display: block;
+  } /* نمایش بک‌گراند تیره */
+
+  .settings-container {
+    padding: 15px;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  } /* کارت‌ها زیر هم */
+
+  /* حذف حاشیه اضافی عنوان چون در موبایل هدر داریم */
+  .page-title {
+    display: none;
+  }
+}
+
+/* اعمال دارک مود روی سایدبار */
+body.dark-mode .sidebar {
+    background-color: #1e1e2d; /* رنگ تیره سایدبار */
+    border-left: 1px solid #2b2b40;
+}
+
+body.dark-mode .sidebar .menu-item {
+    color: #a2a3b7;
+}
+
+body.dark-mode .sidebar .menu-item:hover,
+body.dark-mode .sidebar .menu-item.active {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+/* برای هدر موبایل در حالت دارک مود */
+body.dark-mode .mobile-header {
+    background-color: #1e1e2d;
+    border-bottom: 1px solid #2b2b40;
+}

@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS helpcenter_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE helpcenter_db;
+
+-- جدول کاربران
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('user', 'admin') DEFAULT 'user'
+);
+
+-- جدول تیکت‌ها
+CREATE TABLE tickets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    status ENUM('open', 'closed') DEFAULT 'open',
+    admin_reply TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- ساخت یک ادمین پیش‌فرض (نام کاربری: admin / رمز عبور: 123456)
+INSERT INTO users (username, password, role) VALUES ('admin', '$2y$10$QjSH496pcT5CEjzjD/vlTiePJCqoJ.tE3R5rA/V3G4/K1X.9bZ5m2', 'admin');
+
+
+UPDATE users SET role = 'admin' WHERE username = 'manjar';

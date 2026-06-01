@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت تیکت</title>
+    <link rel="stylesheet" href="/project.testortamren/test/assets/css/مشتریان.css">
+</head>
+<body>
+    <!-- دکمه‌های شناور سمت راست -->
+<div class="side-buttons">
+
+    <!-- دکمه بازگشت -->
+    <a href="/project.testortamren/test/assets/page/تیکت.html" class="side-btn" title="بازگشت">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" fill="none">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6" />
+        </svg>
+        <span>بازگشت</span>
+    </a>
+
+    <!-- دکمه صفحه اصلی -->
+    <a href="/project.testortamren/test/assets/page/index.html" class="side-btn" title="صفحه اصلی">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" fill="none">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.75L12 3l9 6.75V21a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 21z" />
+        </svg>
+        <span>صفحه اصلی</span>
+    </a>
+
+</div>
+
+
+    <div class="ticket-container">
+        
+        <!-- هدر تیکت -->
+        <div class="header">
+            <div>
+                <h2 class="header-title">تیکت #1052: مشکل در ورود به حساب کاربری</h2>
+                <span class="header-meta">ارسال شده توسط: علی احمدی - ۲ ساعت پیش</span>
+            </div>
+            <div class="header-actions">
+                <span class="status-badge">در انتظار پاسخ</span>
+                <button class="btn btn-red">بستن تیکت</button>
+            </div>
+        </div>
+
+        <!-- بدنه پیام ها -->
+        <div class="messages-body">
+            
+            <!-- پیام کاربر -->
+            <div class="message-row">
+                <div class="user-info">
+                    <div class="avatar user">ع</div>
+                    <span>علی احمدی (مشتری)</span>
+                </div>
+                <div class="bubble user">
+                    سلام وقت بخیر، من رمز عبورم رو فراموش کردم و وقتی درخواست ریست پسورد میدم ایمیلی برام نمیاد. لطفا راهنمایی کنید.
+                </div>
+            </div>
+
+            <!-- پیام ادمین -->
+            <div class="message-row admin">
+                <div class="user-info">
+                    <div class="avatar admin">A</div>
+                    <span>ادمین سیستم (شما)</span>
+                </div>
+                <div class="bubble admin">
+                    سلام کاربر گرامی. مشکل از سمت سرور ایمیل ما بود که الان برطرف شده. لطفا مجددا تلاش کنید.
+                    
+                    <!-- دکمه ویرایش (SVG) -->
+                    <button class="edit-btn" title="ویرایش پیام">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- فوتر و دکمه پاسخ -->
+        <div class="footer">
+            <button onclick="openModal()" class="btn btn-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                </svg>
+                پاسخ دادن
+            </button>
+        </div>
+    </div>
+
+    <!-- پاپ آپ (Modal) پاسخ -->
+    <div id="replyModal" class="modal-overlay">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <h3>ارسال پاسخ</h3>
+                <button onclick="closeModal()" class="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div style="margin-bottom: 8px; font-size: 14px; font-weight: bold; color: var(--text-dark);">متن پاسخ شما:</div>
+                <textarea placeholder="اینجا بنویسید..."></textarea>
+            </div>
+
+            <div class="modal-footer">
+                <button onclick="closeModal()" class="btn btn-outline">انصراف</button>
+                <button class="btn btn-blue">ارسال پاسخ</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/project.testortamren/test/assets/js/مشتریان.js">
+    </script>
+</body>
+</html>

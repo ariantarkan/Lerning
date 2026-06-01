@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مدیریت کارکنان</title>
+    <link
+      rel="stylesheet"
+      href="/project.testortamren/test/assets/css/کاربران.css"
+    />
+  </head>
+  <body>
+    <div class="overlay-sidebar" id="sidebarOverlay"></div>
+    <div id="toastContainer" class="toast-container"></div>
+    <!-- Container for toasts -->
+
+    <div class="sidebar" id="sidebar">
+      <div class="logo">ادمین پنل</div>
+
+      <a
+        href="/project.testortamren/test/assets/page/index.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        داشبورد
+      </a>
+
+      <a
+        href="/project.testortamren/test/assets/page/محصولات.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+          ></path>
+        </svg>
+        محصولات
+      </a>
+
+      <a
+        href="/project.testortamren/test/assets/page/کاربران.html"
+        class="menu-item active"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        کاربران
+      </a>
+
+      <a
+        href="/project.testortamren/test/assets/page/امار وگزارش.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        آمار و گزارش‌ها
+      </a>
+
+      <!-- کنسول -->
+      <a href="#" class="menu-item">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <polyline points="4 17 10 11 4 5"></polyline>
+          <line x1="12" y1="19" x2="20" y2="19"></line>
+        </svg>
+        کنسول
+      </a>
+
+      <!-- تیکت ها -->
+      <a
+        href="/project.testortamren/test/assets/page/تیکت.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+          ></path>
+        </svg>
+        تیکت ها
+      </a>
+
+      <!-- دیتاسنتر (آیکون سرور) -->
+      <a
+        href="/project.testortamren/test/assets/page/دیتاسینتر.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+          <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+          <line x1="6" y1="6" x2="6.01" y2="6"></line>
+          <line x1="6" y1="18" x2="6.01" y2="18"></line>
+        </svg>
+        دیتاسنتر
+      </a>
+
+      <a href="#settings" class="menu-item">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="3"></circle>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+          ></path>
+        </svg>
+        تنظیمات
+      </a>
+    </div>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div class="header-title-wrapper">
+          <button class="mobile-menu-btn" id="menuToggleBtn">
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <h1>مدیریت کارکنان</h1>
+        </div>
+        <button
+          class="btn btn-primary"
+          id="roleBtn"
+          style="background-color: #6f42c1; margin-left: 10px"
+        >
+          <svg
+            class="icon-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          مدیریت رول
+        </button>
+
+        <button class="btn btn-primary" id="addUserBtn">
+          <svg
+            class="icon-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 5v14M5 12h14"></path>
+          </svg>
+          افزودن کاربر
+        </button>
+      </header>
+
+      <section class="filter-bar">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="جستجو بر اساس نام، ایمیل و..."
+          />
+          <svg
+            class="icon-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <select class="filter-select" id="roleFilter">
+          <option value="all">فیلتر بر اساس نقش (همه)</option>
+          <option value="ادمین">ادمین</option>
+          <option value="کاربر">کاربر</option>
+          <option value="فروشنده">فروشنده</option>
+        </select>
+        <select class="filter-select" id="statusFilter">
+          <option value="all">فیلتر بر اساس وضعیت (همه)</option>
+          <option value="فعال">فعال</option>
+          <option value="بن شده">بن شده</option>
+          <option value="در انتظار تایید">در انتظار تایید</option>
+        </select>
+      </section>
+
+      <section class="users-table-container">
+        <table class="users-table">
+          <thead>
+            <tr>
+              <th>کاربر</th>
+              <th>نقش</th>
+              <th>وضعیت</th>
+              <th>تاریخ عضویت</th>
+              <th>عملیات</th>
+            </tr>
+          </thead>
+          <tbody id="usersTableBody">
+            <tr>
+              <td>
+                <div class="user-info">
+                  <img src="https://i.pravatar.cc/40?u=a" alt="Avatar" />
+                  <div>
+                    <span class="user-name">علیرضا محمدی</span>
+                    <span class="user-email">alireza@example.com</span>
+                  </div>
+                </div>
+              </td>
+              <td class="role-cell">ادمین</td>
+              <td class="status-cell">
+                <span class="status-badge status-active">فعال</span>
+              </td>
+              <td>۱۴۰۵/۰۲/۱۰</td>
+              <td class="action-buttons">
+                <button
+                  class="action-btn view"
+                  title="مشاهده جزئیات"
+                  data-name="علیرضا محمدی"
+                  data-email="alireza@example.com"
+                >
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="action-btn message"
+                  title="ارسال پیام"
+                  data-name="علیرضا محمدی"
+                >
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+                <button
+                  class="action-btn ban"
+                  title="بن کردن کاربر"
+                  data-name="علیرضا محمدی"
+                >
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                  </svg>
+                </button>
+                <button class="action-btn delete" title="حذف کاربر">
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path
+                      d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                    ></path>
+                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="user-info">
+                  <img src="https://i.pravatar.cc/40?u=b" alt="Avatar" />
+                  <div>
+                    <span class="user-name">زهرا حسینی</span>
+                    <span class="user-email">zahra.h@example.com</span>
+                  </div>
+                </div>
+              </td>
+              <td class="role-cell">کاربر</td>
+              <td class="status-cell">
+                <span class="status-badge status-banned">بن شده</span>
+              </td>
+              <td>۱۴۰۴/۱۱/۲۰</td>
+              <td class="action-buttons">
+                <button
+                  class="action-btn view"
+                  title="مشاهده جزئیات"
+                  data-name="زهرا حسینی"
+                  data-email="zahra.h@example.com"
+                >
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="action-btn message"
+                  title="ارسال پیام"
+                  data-name="زهرا حسینی"
+                >
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+                <!-- توجه: کلاس این دکمه از ban به unban تغییر یافت -->
+                <button
+                  class="action-btn unban"
+                  title="رفع بن کاربر"
+                  data-name="زهرا حسینی"
+                >
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <polyline points="17 11 19 13 23 9"></polyline>
+                  </svg>
+                </button>
+                <button class="action-btn delete" title="حذف کاربر">
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path
+                      d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                    ></path>
+                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="user-info">
+                  <img src="https://i.pravatar.cc/40?u=c" alt="Avatar" />
+                  <div>
+                    <span class="user-name">امیررضا کاظمی</span>
+                    <span class="user-email">amirreza.k@example.com</span>
+                  </div>
+                </div>
+              </td>
+              <td class="role-cell">فروشنده</td>
+              <td class="status-cell">
+                <span class="status-badge status-pending">در انتظار تایید</span>
+              </td>
+              <td>۱۴۰۵/۰۲/۱۵</td>
+              <td class="action-buttons">
+                <button
+                  class="action-btn view"
+                  title="مشاهده جزئیات"
+                  data-name="امیررضا کاظمی"
+                  data-email="amirreza.k@example.com"
+                >
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="action-btn message"
+                  title="ارسال پیام"
+                  data-name="امیررضا کاظمی"
+                >
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+                <button
+                  class="action-btn ban"
+                  title="بن کردن کاربر"
+                  data-name="امیررضا کاظمی"
+                >
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                  </svg>
+                </button>
+                <button class="action-btn delete" title="حذف کاربر">
+                  <svg
+                    class="icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path
+                      d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                    ></path>
+                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- Modal: View User Details -->
+    <div class="modal-overlay" id="viewDetailsModal">
+      <div class="modal-content large">
+        <div class="modal-header">
+          <h2>جزئیات کاربر و سوابق خرید</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              margin-bottom: 25px;
+            "
+          >
+            <div
+              style="
+                width: 50px;
+                height: 50px;
+                background: #e9ecef;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div>
+              <h3 id="modalUserName" style="margin: 0 0 5px 0">نام کاربر</h3>
+              <p
+                id="modalUserEmail"
+                style="margin: 0; color: var(--text-light); font-size: 14px"
+              >
+                ایمیل
+              </p>
+            </div>
+          </div>
+          <h3
+            style="
+              font-size: 16px;
+              margin-bottom: 10px;
+              border-bottom: 1px solid #eee;
+              padding-bottom: 10px;
+            "
+          >
+            محصولات خریداری شده
+          </h3>
+          <div style="overflow-x: auto">
+            <table class="users-table purchase-history-table">
+              <thead>
+                <tr>
+                  <th>نام محصول</th>
+                  <th>قیمت سفارش</th>
+                  <th>تاریخ ثبت</th>
+                </tr>
+              </thead>
+              <tbody id="userPurchasesBody">
+                <tr>
+                  <td>کفش ورزشی نایک مدل X</td>
+                  <td>۲,۵۰۰,۰۰۰ تومان</td>
+                  <td>۱۴۰۵/۰۱/۲۰</td>
+                </tr>
+                <tr>
+                  <td>تیشرت نخی سایز L</td>
+                  <td>۴۵۰,۰۰۰ تومان</td>
+                  <td>۱۴۰۴/۱۲/۱۵</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary close-btn">بستن</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Add User -->
+    <div class="modal-overlay" id="addUserModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>افزودن کاربر جدید</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>نام کامل</label><input type="text" placeholder="نام کاربر" />
+          </div>
+          <div class="form-group">
+            <label>ایمیل</label
+            ><input type="email" placeholder="email@example.com" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary close-btn">انصراف</button>
+          <button class="btn btn-primary">ایجاد کاربر</button>
+        </div>
+      </div>
+    </div>
+    <!-- Modal: Main Role Selection -->
+    <div class="modal-overlay" id="mainRoleModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>مدیریت رول‌ها</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body message-options">
+          <button class="btn-option" id="btnCreateRole">
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+            ساختن رول
+          </button>
+          <button class="btn-option" id="btnAssignRole">
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7" r="4"></circle>
+              <line x1="20" y1="8" x2="20" y2="14"></line>
+              <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+            دادن رول
+          </button>
+          <button class="btn-option" id="btnDeleteRole">
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7" r="4"></circle>
+              <line x1="18" y1="11" x2="22" y2="11"></line>
+            </svg>
+            حذف رول (گرفتن رول)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Create Role -->
+    <div class="modal-overlay" id="createRoleModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>ساخت رول جدید</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>اسم رول</label>
+            <input type="text" placeholder="مثلا: پشتیبان ارشد" />
+          </div>
+          <div class="form-group">
+            <label>رنگ رول</label>
+            <input type="color" style="height: 40px; padding: 0" />
+          </div>
+          <div class="form-group">
+            <label>دسترسی‌های رول</label>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <label><input type="checkbox" /> دسترسی به کاربران</label>
+              <label><input type="checkbox" /> دسترسی به محصولات</label>
+              <label><input type="checkbox" /> دسترسی به تنظیمات</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary close-btn">انصراف</button>
+          <button class="btn btn-primary">ایجاد رول</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Assign Role -->
+    <div class="modal-overlay" id="assignRoleModal">
+      <div class="modal-content large">
+        <div class="modal-header">
+          <h2>دادن رول به کاربر</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="search-box" style="margin-bottom: 20px">
+            <input
+              type="text"
+              id="searchAssignRole"
+              placeholder="جستجو بر اساس نام یا ایمیل..."
+            />
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <table class="users-table">
+            <tbody id="assignRoleResults">
+              <!-- این بخش با JS پر می‌شود، فعلا یک نمونه تستی -->
+              <tr>
+                <td>
+                  علیرضا محمدی <br /><small style="color: gray"
+                    >alireza@example.com</small
+                  >
+                </td>
+                <td style="text-align: left">
+                  <select class="filter-select" style="min-width: 120px">
+                    <option>مدیر</option>
+                    <option>پشتیبان</option>
+                  </select>
+                  <button
+                    class="btn btn-primary"
+                    style="padding: 8px 12px; margin-right: 10px"
+                  >
+                    دادن رول
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Revoke Role -->
+    <div class="modal-overlay" id="revokeRoleModal">
+      <div class="modal-content large">
+        <div class="modal-header">
+          <h2>گرفتن رول از کاربر</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="search-box" style="margin-bottom: 20px">
+            <input
+              type="text"
+              id="searchRevokeRole"
+              placeholder="جستجو بر اساس نام یا ایمیل..."
+            />
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <table class="users-table">
+            <tbody id="revokeRoleResults">
+              <!-- نمونه تستی -->
+              <tr>
+                <td>
+                  زهرا حسینی <br /><small style="color: gray"
+                    >رول فعلی: کاربر</small
+                  >
+                </td>
+                <td style="text-align: left">
+                  <button class="btn btn-danger" style="padding: 8px 12px">
+                    گرفتن رول
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= MODALS NEW ================= -->
+
+    <!-- Modal: Select Message Type -->
+    <div class="modal-overlay" id="messageTypeModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>انتخاب نوع پیام</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body message-options">
+          <button class="btn-option" id="btnSendDiscount">
+            <svg
+              class="icon-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="19" y1="5" x2="5" y2="19"></line>
+              <circle cx="6.5" cy="6.5" r="2.5"></circle>
+              <circle cx="17.5" cy="17.5" r="2.5"></circle>
+            </svg>
+            ارسال تخفیف
+          </button>
+          <button class="btn-option" id="btnSendError">
+            <svg
+              class="icon-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+              ></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            ارسال اخطار (خطا)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Send Discount Form -->
+    <div class="modal-overlay" id="sendDiscountModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>ارسال کد تخفیف</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>کد تخفیف</label
+            ><input type="text" placeholder="مانند: YALDA-1405" />
+          </div>
+          <div class="form-group">
+            <label>قیمت تخفیف</label
+            ><input type="text" placeholder="مبلغ یا درصد تخفیف" />
+          </div>
+          <div class="form-group">
+            <label>توضیحات تخفیف</label
+            ><textarea
+              placeholder="توضیحات و شرایط استفاده از این کد..."
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal-footer" style="justify-content: center">
+          <button class="btn btn-secondary close-btn">انصراف</button>
+          <button class="btn btn-primary">ثبت ارسال</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Send Error Form -->
+    <div class="modal-overlay" id="sendErrorModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>ارسال اخطار (خطا)</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>عنوان خطا</label
+            ><input type="text" placeholder="عنوان اخطار" />
+          </div>
+          <div class="form-group">
+            <label>دلیل خطا</label
+            ><textarea
+              placeholder="شرح مشکل یا دلیل اخطار را بنویسید..."
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal-footer" style="justify-content: center">
+          <button class="btn btn-secondary close-btn">انصراف</button>
+          <button class="btn btn-danger">ثبت اخطار</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Ban User -->
+    <div class="modal-overlay" id="banUserModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="banModalTitle">بن کردن کاربر:</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>مدت زمان بن</label>
+            <select>
+              <option>۱ روز</option>
+              <option>۳ روز</option>
+              <option>۱ هفته</option>
+              <option>۱ ماه</option>
+              <option>دائمی</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>دلیل بن کردن (اختیاری)</label>
+            <textarea
+              placeholder="توضیحی کوتاه درباره دلیل مسدود کردن کاربر بنویسید..."
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal-footer" style="justify-content: center">
+          <button class="btn btn-secondary close-btn">انصراف</button>
+          <button class="btn btn-danger">ثبت</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/project.testortamren/test/assets/js/کاربران.js"></script>
+  </body>
+</html>

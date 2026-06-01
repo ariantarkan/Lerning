@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.static-box {
+    background-color: lightblue;
+    padding: 20px;
+    border: 2px solid blue;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.relative-box {
+    background-color: lightgreen;
+    padding: 20px;
+    border: 2px solid green;
+    margin: 10px auto;
+    width: 80%;
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+.absolute-box {
+    background-color: rgb(229, 255, 0);
+    padding: 20px;
+    border: 2px solid rgb(220,174,0);
+    margin: 10px auto;
+    width: 80%;
+    position: absolute;
+    top: 30px;
+    left: 90px;
+}
+
+.fixed-box {
+    background-color: lightyellow;
+    padding: 20px;
+    border: 2px solid orange;
+    width: 0px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+.sticky-box {
+    background-color: rgb(0, 255, 149);
+    padding: 20px;
+    border: 2px solid rgb(0, 15, 220);
+    margin: 10px auto;
+    width: 80%;
+    position: sticky;
+    top: 0;
+}
+
+

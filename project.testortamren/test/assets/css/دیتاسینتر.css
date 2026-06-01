@@ -1,0 +1,472 @@
+@font-face {
+  font-family: "MyPersianFont";
+  src: url("/project.testortamren/Nova_Bytes/assets/fonts/Vazir.woff2")
+    format("woff2");
+}
+
+:root {
+  --bg-body: #f4f6fc;
+  --bg-sidebar: #4c72e2;
+  --bg-sidebar-active: #2b499b;
+  --text-dark: #333;
+  --text-light: #777;
+  --white: #ffffff;
+  --border-radius: 12px;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  --card-border: #edf0f7;
+  --primary: #4c72e2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "MyPersianFont", Arial, sans-serif;
+  background-color: var(--bg-body);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--bg-sidebar);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  z-index: 10;
+}
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+.nav-item {
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+.nav-item:hover,
+.nav-item.active {
+  background-color: var(--bg-sidebar-active);
+  border-radius: 0 8px 8px 0;
+  margin-left: 15px;
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  overflow-y: auto;
+  position: relative;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  padding: 15px 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 25px;
+}
+.header .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+.header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.header .search-bar {
+  background: #f0f2f5;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  outline: none;
+  width: 250px;
+  font-family: inherit;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.module-card {
+  background-color: var(--white);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--card-border);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  position: relative;
+  border-top: 4px solid var(--primary);
+}
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+.module-card:nth-child(2) {
+  border-top-color: #f39c12;
+}
+.module-card:nth-child(3) {
+  border-top-color: #27ae60;
+}
+.module-card:nth-child(4) {
+  border-top-color: #9b59b6;
+}
+.module-card:nth-child(5) {
+  border-top-color: #e74c3c;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.card-header h3 {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 18px;
+}
+.view-details-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: color 0.2s;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.view-details-btn:hover {
+  color: var(--primary);
+}
+.view-details-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.module-card p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.stats-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.stat-box {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  text-align: center;
+  border: 1px dashed #ccc;
+}
+.stat-box span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+.stat-box strong {
+  font-size: 22px;
+  color: var(--text-dark);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 100;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  background: var(--white);
+  width: 600px;
+  max-width: 90%;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 90vh;
+}
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-header {
+  padding: 20px 25px;
+  border-bottom: 1px solid var(--card-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafbfc;
+}
+.modal-header h3 {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 18px;
+}
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-light);
+  cursor: pointer;
+  line-height: 1;
+  transition: 0.2s;
+}
+.close-modal:hover {
+  color: #e74c3c;
+}
+
+.modal-body {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  overflow-y: auto;
+}
+
+/* استایل دکمه‌های زیربخش با افکت هاور درخواستی */
+.sub-feature {
+  background: var(--bg-body);
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-dark);
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sub-feature:hover {
+  border-color: var(--primary);
+  background: #f0f4ff;
+  box-shadow: 0 6px 15px rgba(76, 114, 226, 0.2); /* باکس شدو */
+  transform: translateY(-5px); /* حرکت به سمت بالا */
+}
+.sub-feature span {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--primary);
+}
+.sub-feature small {
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+/* پاپ‌آپ‌های لایه دوم */
+.sub-modal {
+  z-index: 110;
+}
+.sub-modal .modal-content {
+  width: 500px;
+  border-top: 4px solid var(--primary);
+}
+.sub-modal .modal-body {
+  display: block;
+}
+.sidebar {
+  width: 260px;
+  background-color: #4e73df;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Menu Items (Anchors) */
+.menu-item {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none; /* حذف خط زیر لینک */
+  display: flex;
+  align-items: center;
+  gap: 12px; /* فاصله بین آیکون و متن */
+  transition: all 0.3s ease; /* انیمیشن نرم */
+}
+
+.menu-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  background-color: rgb(29, 65, 141);
+  color: white; /* رنگ متن و آیکون در زمان هاور سفید شود تا بهتر دیده شود */
+}
+
+.menu-item:hover {
+  transform: translateY(-4px); /* حرکت به سمت بالا زمان هاور */
+}
+/* استایل‌های جستجو */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  width: 18px;
+  height: 18px;
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+.header .search-bar {
+  padding: 10px 35px 10px 15px; /* فضا برای آیکون */
+  width: 250px;
+  transition: width 0.3s;
+}
+
+/* دکمه منوی موبایل (پیش‌فرض مخفی) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* افکت هاور برای سایدبار */
+.sidebar .menu-item {
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+/* ========================================= */
+/* مدیا کوئری‌ها برای ریسپانسیو کردن */
+/* ========================================= */
+
+/* نمایشگرهای بزرگ (1080p به بالا) */
+@media (min-width: 1920px) {
+  .modules-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* لپ‌تاپ‌ها و تبلت‌های افقی */
+@media (max-width: 1024px) {
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* تبلت‌ها و موبایل‌های بزرگ */
+@media (max-width: 768px) {
+  /* سایدبار روی صفحه قرار میگیرد */
+  .sidebar {
+    position: fixed;
+    right: -320px; /* این مقدار تغییر کرد تا کاملا مخفی شود */
+    height: 100vh;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    right: 0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* نمایش دکمه منو */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .header .search-bar {
+    width: 150px;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* مدال‌ها در موبایل */
+  .modal-content,
+  .sub-modal .modal-content {
+    width: 95%;
+    margin: 10px;
+  }
+
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* موبایل‌های کوچک */
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .header .user-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .header .search-bar {
+    width: 100%;
+  }
+
+  .search-container {
+    flex: 1;
+    margin-left: 15px;
+  }
+}

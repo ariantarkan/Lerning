@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مدیریت تیکت ها</title>
+    <link
+      rel="stylesheet"
+      href="/project.testortamren/test/assets/css/تیکت.css"
+    />
+  </head>
+  <body>
+    <!-- هدر موبایل -->
+    <div class="mobile-header">
+      <h2 style="color: var(--text-main); font-size: 18px">لیست محصولات</h2>
+      <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- سایدبار -->
+    <div class="sidebar" id="sidebar">
+      <div class="logo">ادمین پنل</div>
+
+      <a
+        href="/project.testortamren/test/assets/page/index.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        داشبورد
+      </a>
+
+      <a
+        href="/project.testortamren/test/assets/page/محصولات.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+          ></path>
+        </svg>
+        محصولات
+      </a>
+
+      <a
+        href="/project.testortamren/test/assets/page/کاربران.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        کاربران
+      </a>
+
+      <a
+        href="/project.testortamren/test/assets/page/امار وگزارش.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        آمار و گزارش‌ها
+      </a>
+
+      <!-- کنسول -->
+      <a href="#" class="menu-item">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <polyline points="4 17 10 11 4 5"></polyline>
+          <line x1="12" y1="19" x2="20" y2="19"></line>
+        </svg>
+        کنسول
+      </a>
+
+      <!-- تیکت ها -->
+      <a href="/project.testortamren/test/assets/page/تیکت.html" class="menu-item active">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+          ></path>
+        </svg>
+        تیکت ها
+      </a>
+
+      <!-- دیتاسنتر (آیکون سرور) -->
+      <a
+        href="/project.testortamren/test/assets/page/دیتاسینتر.html"
+        class="menu-item "
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+          <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+          <line x1="6" y1="6" x2="6.01" y2="6"></line>
+          <line x1="6" y1="18" x2="6.01" y2="18"></line>
+        </svg>
+        دیتاسنتر
+      </a>
+
+      <a href="#settings" class="menu-item">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="3"></circle>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+          ></path>
+        </svg>
+        تنظیمات
+      </a>
+    </div>
+
+    <!-- بخش اصلی محتوا -->
+    <main class="main-content">
+      <div class="page-header"><h1 class="page-title">مدیریت تیکت‌ها</h1></div>
+
+      <!-- فیلترها و جستجو -->
+      <div class="filters-container">
+        <div class="filter-box">
+          <svg
+            width="20"
+            height="20"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="جستجو نام، ایمیل یا موضوع..."
+            onkeyup="filterData()"
+          />
+        </div>
+
+        <div class="filter-box">
+          <select id="statusFilter" onchange="filterData()">
+            <option value="all">همه وضعیت‌ها</option>
+            <option value="pending">در انتظار پاسخ</option>
+            <option value="answered">پاسخ داده شده</option>
+            <option value="closed">بسته شده</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- لیست تیکت ها -->
+      <div class="ticket-list-container">
+        <div class="list-header">
+          <div>کاربر ارسال کننده</div>
+          <div>عنوان تیکت</div>
+          <div>وضعیت</div>
+          <div>تاریخ ثبت</div>
+          <div>عملیات</div>
+        </div>
+
+        <!-- ردیف 1 -->
+        <div class="list-row" data-status="pending">
+          <div class="user-col">
+            <span class="user-name">علی احمدی</span>
+            <span class="user-email">ali.ahmadi@example.com</span>
+          </div>
+          <div class="ticket-title">مشکل در ورود به حساب کاربری</div>
+          <div><span class="badge badge-pending">در انتظار پاسخ</span></div>
+          <div class="date-text">۱۴۰۵/۰۲/۱۸</div>
+          <div class="action-col">
+            <a
+              href="/project.testortamren/test/assets/page/مشتریان .html"
+              class="btn btn-reply"
+            >
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
+                /></svg
+              >پاسخ
+            </a>
+            <button class="btn btn-close">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+                /></svg
+              >بستن
+            </button>
+          </div>
+        </div>
+
+        <!-- ردیف 2 -->
+        <div class="list-row" data-status="answered">
+          <div class="user-col">
+            <span class="user-name">زهرا حسینی</span>
+            <span class="user-email">zahra.h@example.com</span>
+          </div>
+          <div class="ticket-title">پیگیری سفارش شماره 4598</div>
+          <div><span class="badge badge-answered">پاسخ داده شده</span></div>
+          <div class="date-text">۱۴۰۵/۰۲/۱۷</div>
+          <div class="action-col">
+            <button
+              class="btn btn-reply"
+              onclick="
+                openModal(
+                  'زهرا حسینی',
+                  'کی سفارش من ارسال میشه؟',
+                  'سفارش شما فردا تحویل پست می‌گردد.',
+                )
+              "
+            >
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                /></svg
+              >مشاهده
+            </button>
+          </div>
+        </div>
+
+        <!-- ردیف 3 -->
+        <div class="list-row" data-status="closed">
+          <div class="user-col">
+            <span class="user-name">امیررضا کاظمی</span>
+            <span class="user-email">amir.k@example.com</span>
+          </div>
+          <div class="ticket-title">درخواست تغییر ایمیل کاربری</div>
+          <div><span class="badge badge-closed">بسته شده</span></div>
+          <div class="date-text">۱۴۰۵/۰۲/۱۵</div>
+          <div class="action-col">
+            <button
+              class="btn btn-reply"
+              onclick="
+                openModal(
+                  'امیررضا کاظمی',
+                  'میخوام ایمیلم رو عوض کنم، چطور ممکنه؟',
+                  'ایمیل شما طبق درخواست تغییر یافت.',
+                )
+              "
+            >
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                /></svg
+              >مشاهده
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ساختار پاپ آپ (Modal) -->
+    <div class="modal" id="ticketModal" onclick="closeModalOutside(event)">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modalTitle">مشاهده تیکت</h3>
+          <button class="close-modal" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="chat-bubble chat-user">
+            <strong style="display: block; margin-bottom: 5px">کاربر:</strong>
+            <span id="modalUserMsg">متن پیام کاربر...</span>
+            <span class="chat-time">۱۴۰۵/۰۲/۱۸ - ۱۲:۳۰</span>
+          </div>
+          <div class="chat-bubble chat-admin">
+            <strong style="display: block; margin-bottom: 5px"
+              >ادمین (شما):</strong
+            >
+            <span id="modalAdminMsg">پاسخ ادمین...</span>
+            <span class="chat-time">۱۴۰۵/۰۲/۱۸ - ۱۳:۰۰</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- کدهای جاوااسکریپت برای جستجو، فیلتر و پاپ آپ -->
+    <script src="/project.testortamren/test/assets/js/تیکت.js"></script>
+  </body>
+</html>

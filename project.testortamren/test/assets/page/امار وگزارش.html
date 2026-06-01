@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش‌های فروش و درآمد</title>
+    <link rel="stylesheet" href="/project.testortamren/test/assets/css/امارگزارش.css">
+</head>
+<body>
+
+    <!-- لایه تاریک موبایل -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="app-layout">
+        <!-- سایدبار -->
+<div class="sidebar">
+      <div class="logo">ادمین پنل</div>
+
+      <a
+        href="/project.testortamren/test/assets/page/index.html"
+        class="menu-item active"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        داشبورد
+      </a>
+
+      <a
+        href="/project.testortamren/test/assets/page/محصولات.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+          ></path>
+        </svg>
+        محصولات
+      </a>
+
+      <a
+        href="/project.testortamren/test/assets/page/کاربران.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        کاربران
+      </a>
+
+      <a
+        href="/project.testortamren/test/assets/page/امار وگزارش.html"
+        class="menu-item"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        آمار و گزارش‌ها
+      </a>
+
+      <!-- کنسول -->
+      <a href="#" class="menu-item">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <polyline points="4 17 10 11 4 5"></polyline>
+          <line x1="12" y1="19" x2="20" y2="19"></line>
+        </svg>
+        کنسول
+      </a>
+
+      <!-- تیکت ها -->
+      <a href="/project.testortamren/test/assets/page/تیکت.html" class="menu-item">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+          ></path>
+        </svg>
+        تیکت ها
+      </a>
+
+      <!-- دیتاسنتر (آیکون سرور) -->
+      <a
+        href="/project.testortamren/test/assets/page/دیتاسینتر.html"
+        class="menu-item "
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+          <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+          <line x1="6" y1="6" x2="6.01" y2="6"></line>
+          <line x1="6" y1="18" x2="6.01" y2="18"></line>
+        </svg>
+        دیتاسنتر
+      </a>
+
+      <a href="#settings" class="menu-item">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="3"></circle>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+          ></path>
+        </svg>
+        تنظیمات
+      </a>
+    </div>
+
+        <!-- محتوای اصلی -->
+        <main class="main-content">
+            <div class="container">
+                <!-- 1) هدر صفحه -->
+                <header class="page-header">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <button id="mobileMenuBtn" class="mobile-menu-btn">☰</button>
+                        <h1>گزارش‌های فروش و درآمد</h1>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" id="productSearchInput" placeholder="جستجوی نام محصول...">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- 2) کارت‌های آمار کلیدی (KPI) -->
+                <section class="kpi-grid">
+                    <article class="kpi-card card-1">
+                        <h4>درآمد امروز</h4>
+                        <p id="kpi-today-revenue">۱۲,۴۵۰,۰۰۰ <small>تومان</small></p>
+                    </article>
+                    <article class="kpi-card card-2">
+                        <h4>درآمد ماه جاری</h4>
+                        <p id="kpi-month-revenue">۳۱۰,۸۰۰,۰۰۰ <small>تومان</small></p>
+                    </article>
+                    <article class="kpi-card card-3">
+                        <h4>میانگین فروش روزانه</h4>
+                        <p id="kpi-avg-daily">۸,۲۰۰,۰۰۰ <small>تومان</small></p>
+                    </article>
+                    <article class="kpi-card card-4">
+                        <h4>تعداد کل سفارش‌ها</h4>
+                        <p id="kpi-total-orders">۱,۴۲۰ <small>عدد</small></p>
+                    </article>
+                </section>
+
+                <!-- 3) بخش نمودارها -->
+                <section class="charts-grid">
+                    <!-- باکس اصلی نمودار درآمد -->
+                    <div class="chart-box main-chart">
+                        <div class="chart-header">
+                            <h2>نمودار روند درآمد</h2>
+                            <div class="time-filter">
+                                <button class="active" data-range="daily">روزانه</button>
+                                <button data-range="weekly">هفتگی</button>
+                                <button data-range="monthly">ماهانه</button>
+                                <button data-range="yearly">سالانه</button>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <div class="chart-placeholder">
+                                <svg width="100%" height="100%" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet">
+                                    <path d="M 0 150 C 50 120, 100 80, 150 100 S 250 180, 300 140 S 400 20, 450 50 L 500 40" fill="none" stroke="#007bff" stroke-width="3"/>
+                                    <line x1="0" y1="195" x2="500" y2="195" stroke="#e0e0e0" stroke-width="1"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <!-- دکمه خروجی به داخل این باکس منتقل شد -->
+                        <div class="export-section">
+                            <button id="exportExcelBtn" class="btn-export">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                دریافت خروجی اکسل
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-box side-chart">
+                        <div class="chart-header">
+                            <h2>پرفروش‌ترین محصولات</h2>
+                        </div>
+                        <div class="chart-body">
+                            <ul class="product-list" id="productList">
+                                <li data-tooltip="سود: ۱,۲۰۰,۰۰۰ تومان">
+                                    <span class="product-name">موبایل مدل X-Pro</span>
+                                    <strong>۲۵۰ عدد</strong>
+                                </li>
+                                <li data-tooltip="سود: ۹۵۰,۰۰۰ تومان">
+                                    <span class="product-name">لپ‌تاپ گیمینگ سری G</span>
+                                    <strong>۱۸۰ عدد</strong>
+                                </li>
+                                <li data-tooltip="سود: ۴۵۰,۰۰۰ تومان">
+                                    <span class="product-name">ساعت هوشمند Fit-Watch 5</span>
+                                    <strong>۳۲۰ عدد</strong>
+                                </li>
+                                <li data-tooltip="سود: ۶۰۰,۰۰۰ تومان">
+                                    <span class="product-name">هدست بی‌سیم SoundMax</span>
+                                    <strong>۴۱۰ عدد</strong>
+                                </li>
+                                <li data-tooltip="سود: ۲۵۰,۰۰۰ تومان">
+                                    <span class="product-name">کیبورد مکانیکی RGB</span>
+                                    <strong>۱۵۰ عدد</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="/project.testortamren/test/assets/js/امارگزارش.js"></script>
+</body>
+</html>

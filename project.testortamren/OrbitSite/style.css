@@ -1,0 +1,455 @@
+﻿/* تنظیمات پایه */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #b366ff;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #d9b3ff;
+}
+
+/* پس‌زمینه متحرک */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, #0a001a, #1a0033, #000000, #330066);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* محتوای اصلی */
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap; /* برای واکنش‌گرایی بهتر */
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #cc99ff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.username-display {
+    color: #a7a7a7;
+    font-size: 0.9em;
+}
+
+.main-auth-btn {
+    background-color: #7b2cbf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.main-auth-btn:hover {
+    background-color: #9933ff;
+    transform: translateY(-2px);
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.welcome-text {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(204, 153, 255, 0.5);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #cccccc;
+    margin-bottom: 40px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+}
+
+/* فرم ارسال تیکت */
+.ticket-form-container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-bottom: 50px;
+}
+
+.ticket-form-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #e6ccff;
+}
+
+#ticket-form input, #ticket-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 1em;
+}
+
+#ticket-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#ticket-form button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #7b2cbf;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#ticket-form button:hover {
+    background-color: #9933ff;
+}
+
+/* بخش تیکت های من */
+.my-tickets-container {
+    margin-top: 40px;
+}
+.my-tickets-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.ticket-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-right: 5px solid; /* رنگ بر اساس وضعیت */
+    transition: transform 0.2s;
+    text-align: right;
+}
+.ticket-item:hover {
+    transform: translateY(-3px);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ticket-header h4 {
+    font-size: 1.2em;
+    color: #e6ccff;
+}
+
+.ticket-status-open, .ticket-status-closed {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.ticket-status-open {
+    background-color: #ffcc00;
+    color: #333;
+}
+.ticket-status-closed {
+    background-color: #00cc66;
+    color: #fff;
+}
+
+.ticket-message {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.admin-reply {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 204, 102, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+.admin-reply p {
+    color: #c8ffde;
+}
+
+/* کارت های پشتیبانی */
+.support-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 50px;
+}
+.card-link {
+    width: 32%;
+}
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: #cc99ff;
+}
+.card p {
+    color: #ccc;
+}
+
+
+/* مودال ورود و ثبت نام */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    animation: fadeIn 0.3s;
+}
+.modal-content {
+    background-color: #1e1e1e;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #333;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    animation: slideIn 0.4s;
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-btn:hover { color: #fff; }
+
+.modal-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #444;
+}
+.tab-link {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 3px solid transparent;
+}
+.tab-link.active {
+    color: #cc99ff;
+    border-bottom: 3px solid #cc99ff;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.tab-content h2 { text-align: center; margin-bottom: 20px; color: #eee; }
+
+#login-form input, #register-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: #fff;
+}
+#login-form button, #register-form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7b2cbf;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#login-form button:hover, #register-form button:hover { background-color: #9933ff; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+
+/* پیام های انیمیشنی (Toast) */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideToastIn 0.5s forwards;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+.toast.hide {
+    animation: slideToastOut 0.5s forwards;
+}
+
+.toast-success {
+    background-color: #28a745;
+}
+
+.toast-error {
+    background-color: #dc3545;
+}
+
+@keyframes slideToastIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideToastOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+/* --- طراحی واکنش‌گرا (Responsive) برای موبایل --- */
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .welcome-text {
+        font-size: 2.2em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    .support-cards {
+        flex-direction: column;
+    }
+
+    .card-link {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10vh auto;
+    }
+
+    .ticket-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

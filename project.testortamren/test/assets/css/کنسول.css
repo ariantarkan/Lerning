@@ -1,0 +1,395 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex; /* قرار دادن سایدبار و کنسول در یک ردیف */
+  height: 100vh; /* ارتفاع کل صفحه */
+  overflow: hidden;
+  background-color: #f4f6f9;
+  font-family: "MyPersianFont", Arial, sans-serif;
+}
+@font-face {
+  font-family: "MyPersianFont";
+  src: url("/project.testortamren/Nova_Bytes/assets/fonts/Vazir.woff2")
+    format("woff2");
+}
+/* متغیرهای رنگی تم کنسول */
+:root {
+  --bg-console: linear-gradient(135deg, #0b0f19 0%, #1a1b26 100%);
+  --header-bg: rgba(15, 23, 42, 0.8);
+  --border-color: #2dd4bf; /* فیروزه ای */
+  --text-main: #a9b1d6;
+  --success: #4ade80;
+  --error: #f87171;
+  --warning: #facc15;
+  --info: #38bdf8;
+  --time-color: #565f89;
+}
+
+/* استایل کلی باکس کنسول */
+.modern-console-container {
+  background: #d5e7e4;
+  flex: 1;
+  margin: 20px; /* ایجاد فاصله از همه طرف */
+  height: calc(
+    100vh - 40px
+  ); /* تنظیم ارتفاع با احتساب حاشیه‌های بالا و پایین */
+  border-radius: 16px; /* گرد کردن گوشه‌ها */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* یک سایه ملایم برای زیبایی بیشتر */
+  border: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--text-main);
+  position: relative;
+}
+
+/* هدر کنسول */
+.console-header {
+  background: var(--header-bg);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.console-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.console-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.console-actions button {
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.console-actions button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* بدنه خروجی ها */
+.console-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  font-family: Consolas, "Courier New", monospace, Tahoma;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-behavior: smooth;
+}
+
+.console-body::-webkit-scrollbar {
+  width: 8px;
+}
+.console-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.console-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.console-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.log-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.log-time {
+  color: var(--time-color);
+  font-size: 0.8rem;
+  min-width: 75px;
+  user-select: none;
+  margin-top: 2px;
+}
+
+.log-content {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.log-icon {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.log-success .log-text,
+.log-success .log-icon {
+  color: var(--success);
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);
+}
+.log-error .log-text,
+.log-error .log-icon {
+  color: var(--error);
+  text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);
+}
+.log-warning .log-text,
+.log-warning .log-icon {
+  color: var(--warning);
+  text-shadow: 0 0 8px rgba(250, 204, 21, 0.3);
+}
+.log-info .log-text,
+.log-info .log-icon {
+  color: rgb(0 0 0 / 68%);
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+}
+.log-user .log-text,
+.log-user .log-icon {
+  color: #000000;
+  font-weight: bold;
+}
+/* بخش ورودی دستور */
+.console-footer {
+  padding: 15px 20px;
+  background: #1e2532; /* رنگ پس زمینه کمی روشن تر از قبل */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.input-icon {
+  color: var(--border-color);
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0 0 5px var(--border-color));
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px var(--border-color));
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.console-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: Consolas, "Courier New", monospace, Tahoma;
+  font-size: 1rem;
+  outline: none;
+  direction: ltr;
+  text-align: left;
+}
+
+.console-input::placeholder {
+  color: #64748b;
+  direction: rtl;
+  text-align: right;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.input-glow-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--border-color);
+  box-shadow: 0 0 10px var(--border-color);
+  transition: width 0.3s ease;
+}
+
+.console-input:focus ~ .input-glow-line {
+  width: 100%;
+}
+
+.typing-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: var(--border-color);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.sidebar {
+  width: 260px;
+  background-color: #4e73df;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: right 0.3s ease;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1a1a1a; /* رنگ لوگو (ادمین پنل) مشکی شد */
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.menu-item {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #1a1a1a; /* رنگ آیتم‌های انتخاب نشده مشکی شد */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.menu-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  background-color: #2b459b; /* پس‌زمینه آبی تیره برای آیتم انتخاب شده */
+  color: white; /* رنگ متن آیتم انتخاب شده سفید شد */
+  transform: translateY(-2px);
+}
+@media (min-width: 1920px) {
+  .modern-console-container {
+    max-width: 1600px; /* جلوگیری از کشیدگی بیش از حد کنسول */
+    margin: 40px auto;
+    height: calc(100vh - 80px);
+  }
+}
+
+/* برای تبلت‌ها و لپ‌تاپ‌های کوچک */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+    padding: 15px;
+  }
+  .modern-console-container {
+    margin: 15px;
+    height: calc(100vh - 30px);
+  }
+}
+
+/* برای گوشی‌های موبایل */
+/* استایل پیش‌فرض دکمه همبرگری (مخفی در دسکتاپ) */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  padding: 15px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  /* دکمه همبرگری را هم به سمت راست می‌بریم */
+  .hamburger-btn {
+    display: block;
+    left: auto;
+    right: 85%;
+  }
+
+  /* تنظیمات سایدبار برای حالت همبرگری از سمت راست */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: auto; /* غیرفعال کردن چپ */
+    right: -250px; /* مخفی کردن سایدبار در خارج از صفحه سمت راست */
+    width: 250px;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #4e73df;
+    padding-top: 60px;
+    transition: right 0.3s ease; /* انیمیشن باز و بسته شدن از راست */
+    z-index: 1000;
+  }
+
+  /* وقتی منو باز می‌شود به حاشیه راست می‌چسبد */
+  .sidebar.active {
+    right: 0;
+  }
+
+  .menu-item {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 12px 15px;
+    white-space: normal;
+  }
+
+  .logo {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .modern-console-container {
+    margin: 60px 10px 10px 10px;
+    height: calc(100vh - 70px);
+  }
+}
+
+
+/* برای گوشی‌های خیلی کوچک */
+@media (max-width: 480px) {
+  .menu-item span {
+    display: none; /* در صورت نیاز به فضای بیشتر، فقط آیکون‌ها نمایش داده شوند */
+  }
+}

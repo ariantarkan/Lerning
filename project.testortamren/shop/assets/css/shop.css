@@ -1,0 +1,1214 @@
+    :root{
+      --bg:#0b1220;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.1);
+      --text:#e9f0ff;
+      --muted: rgba(233,240,255,.7);
+      --accent:#6ee7ff;
+      --accent2:#a78bfa;
+      --border: rgba(255,255,255,.14);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(110,231,255,.15), transparent 60%),
+        radial-gradient(900px 500px at 90% 20%, rgba(167,139,250,.15), transparent 55%),
+        linear-gradient(180deg, var(--bg), #070b14);
+      color:var(--text);
+      min-height:100vh;
+      padding: 28px 16px;
+    }
+
+    .container{
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom: 18px;
+    }
+
+    .title{
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .badge{
+      padding:8px 14px;
+      border:1px solid var(--border);
+      background: var(--card);
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 820px){
+      .layout{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+
+    .card .card-head{
+      padding: 14px 16px;
+      background: rgba(255,255,255,.04);
+      border-bottom: 1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .card .card-head h2{
+      margin:0;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .card .card-body{
+      padding: 14px 16px;
+    }
+
+    ul.cart-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height: 120px;
+    }
+
+    .cart-item{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 12px;
+    }
+
+    .cart-item .name{
+      font-weight: 800;
+      margin-bottom: 4px;
+      line-height:1.3;
+    }
+
+    .cart-item .price{
+      color: var(--muted);
+      font-weight: 700;
+      font-size: .95rem;
+    }
+
+    .empty{
+      color: var(--muted);
+      font-weight: 700;
+      padding: 18px 10px;
+      text-align:center;
+      opacity: .9;
+    }
+
+    .summary-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 10px 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .summary-total{
+      margin-top: 10px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255,255,255,.18);
+      color: var(--text);
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      margin-top: 14px;
+    }
+
+    .btn{
+      appearance:none;
+      border:none;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: 900;
+      cursor:pointer;
+      transition:.2s transform, .2s opacity, .2s background;
+      width:100%;
+    }
+
+    .btn:active{ transform: translateY(1px); }
+
+    .btn-primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#06101c;
+    }
+
+    .btn-ghost{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.16);
+      color: var(--text);
+    }
+
+    .muted-note{
+      margin-top: 12px;
+      color: var(--muted);
+      font-size:.9rem;
+      line-height:1.6;
+    }
+
+
+
+
+
+
+    /* General Styles */
+:root {
+    --primary-color: #0066aa; /* Deep Purple */
+    --secondary-color: #db4b32; /* Vibrant Orange */
+    --accent-color: #70D6A1; /* Mint Green */
+    --background-color: #F8F9FA; /* Light Gray */
+    --text-color: #333;
+    --light-text-color: #fff;
+    --hover-color: #00558d; /* Darker Purple */
+}
+
+body {
+    font-family: 'Vazir', sans-serif; /* Vazir font for Persian */
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+/* Header and Navbar */
+header {
+    background-color: var(--light-text-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 9px 15px;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+    width: 30px;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 80px 0;
+    background-image: linear-gradient(#005288, #005288), url('https://via.placeholder.com/1500x500/6A057F/FFFFFF?text=Modern+Shop+Banner'); /* Placeholder banner */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--light-text-color);
+}
+
+.hero-section p {
+    font-size: 1.2em;
+}
+
+/* Stories Section */
+.stories-section {
+    padding: 40px 0;
+    background-color: #fff;
+    position: relative; /* For positioning navigation buttons */
+}
+
+.stories-section h2 {
+    color: var(--primary-color);
+}
+
+.story-carousel {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling for stories */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+}
+
+.story-carousel::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar in Chrome, Safari and Opera */
+}
+
+.story-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.story-item:hover {
+    transform: scale(1.05);
+}
+
+.story-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-color);
+    padding: 3px;
+    margin-bottom: 8px;
+    object-fit: cover; /* Ensure images cover the area */
+}.story-item span {
+    font-size: 0.9em;
+    color: var(--text-color);
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.story-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.story-nav:hover {
+    opacity: 1;
+}
+
+.story-nav.prev {
+    left: 10px;
+}
+
+.story-nav.next {
+    right: 10px;
+}
+
+
+/* Products Section */
+.products-section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: contain; /* Use contain to show full image */
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.product-item h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.product-item .price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.product-item .rating {
+    color: #FFD700; /* Gold color for rating stars */
+    margin-bottom: 15px;
+}
+
+.product-item button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.product-item button:hover {
+    background-color: #5CD6A1; /* Darker green */
+}
+
+/* About and Contact Sections */
+.about-section, .contact-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-section {
+    background-color: var(--background-color);
+}
+
+.contact-section {
+    background-color: #fff;
+}
+
+.contact-section p {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-container {
+        order: 3; /* Move search to the bottom */
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .search-container input[type="text"] {
+        width: 60%;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show hamburger icon */
+        order: 1;
+        margin-right: auto; /* Push to the left */
+    }
+
+    .nav-menu {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        order: 2; /* Position below toggle */
+        padding-top: 15px;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    .nav-link {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .story-nav {
+        display: none; /* Hide nav buttons on small screens */
+    }
+     .story-carousel {
+        overflow-x: scroll; /* Ensure scrolling */
+    }
+}
+
+/* Font for Persian */
+@font-face {
+    font-family: 'Vazir';
+    src: url('path/to/vazir.woff2') format('woff2'), /* Replace with actual path if you have the font */
+         url('path/to/vazir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* If Vazir font is not available, use a fallback */
+body {
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+}
+.theme-toggle {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    position: relative;
+    bottom: 70px;
+}
+
+body.dark .theme-toggle {
+    color: #fff;
+    border-color: #555;
+}
+body.dark {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark header,
+body.dark .product-item,
+body.dark .stories-section,
+body.dark footer {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+body.dark .contact-section{background-color: #131313;color: white;}
+body.dark .about-section{background-color: black;color: white;}
+body.dark .products-section{background-color: #1a1919;color: white;}
+body.dark .product-item {background-color: rgb(48, 48, 48); color: white;}
+.nav-link :hover {
+    animation: scaleUp 1s infinite;
+}
+
+.story-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); z-index: 1000; display: flex;
+    justify-content: center; align-items: center;
+}
+.story-content { position: relative; width: 300px; text-align: center; }
+.story-content img { width: 100%; border-radius: 10px; }
+.close-modal { color: white; font-size: 30px; position: absolute; top: -40px; cursor: pointer; }
+.progress-bar { width: 100%; height: 5px; background: #555; margin-top: 10px; }
+.progress { width: 0%; height: 100%; background: white; transition: width 5s linear; }
+
+
+.hedd {
+    background-color: #1e1e1e;
+}
+body{
+    background-color: #333;
+}
+
+.search-container {
+    background-color: #1e1e1e;
+    border-radius: 50px;
+}
+
+
+
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+/* ظاهر شدن نرم */
+@keyframes fadeUp {
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* زوم نرم */
+@keyframes zoomIn {
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* حرکت گرادیانی */
+@keyframes gradientMove {
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* تکان ملایم */
+@keyframes float {
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section{
+    animation:fadeUp 1.2s ease;
+    background-size:200% 200%;
+    animation:
+        fadeUp 1.2s ease,
+        gradientMove 8s infinite linear;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    animation:fadeUp 1s ease;
+}
+
+.nav-link{
+    position:relative;
+    transition:0.3s;
+}
+
+.nav-link::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#071c7c;
+    transition:0.4s;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+
+.nav-link:hover{
+    color:#071c7c;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   STORY ITEMS
+========================= */
+
+.story-item{
+    transition:0.4s;
+    animation:zoomIn 0.8s ease;
+}
+
+.story-item:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+.story-item img{
+    transition:0.4s;
+    border-radius:50%;
+}
+
+.story-item:hover img{
+    box-shadow:0 0 20px #071c7c;
+}
+
+/* =========================
+   PRODUCT ITEMS
+========================= */
+
+.product-item{
+    transition:0.5s;
+    animation:fadeUp 1s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.product-item::before{
+    content:'';
+    position:absolute;
+    top:-100%;
+    left:-100%;
+    width:200%;
+    height:200%;
+    background:linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+    transform:rotate(25deg);
+    transition:0.8s;
+}
+
+.product-item:hover::before{
+    top:100%;
+    left:100%;
+}
+
+.product-item:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+.product-item img{
+    transition:0.5s;
+}
+
+.product-item:hover img{
+    transform:scale(1.08);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.add-to-cart:hover{
+    background:#071c7c;
+    color:#fff;
+    box-shadow:0 0 15px #071c7c;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-container input{
+    transition:0.4s;
+}
+
+.search-container input:focus{
+    transform:scale(1.03);
+    box-shadow:0 0 15px #071c7c;
+}
+
+/* =========================
+   ABOUT & CONTACT
+========================= */
+
+.about-section,
+.contact-section{
+    animation:fadeUp 1.2s ease;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    animation:fadeUp 1.5s ease;
+}
+
+/* =========================
+   STORY VIEWER
+========================= */
+
+.story-viewer img{
+    animation:zoomIn 0.5s ease;
+}
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-toggle{
+    animation:float 3s infinite ease-in-out;
+    transition:0.4s;
+}
+
+.theme-toggle:hover{
+    transform:rotate(180deg) scale(1.1);
+}
+
+
+/* لینک های منو */
+.nav-link{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#131ca3;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+.nav-link:hover{
+    color:#00c3ff;
+    transform:translateY(-2px);
+}
+
+/* آیکون ها */
+.nav-icon{
+    width:22px;
+    height:22px;
+    transition:0.3s;
+}
+
+.nav-link:hover .nav-icon{
+    transform:scale(1.15) rotate(4deg);
+}
+
+/* سبد خرید */
+.cart-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* آیکون سبد */
+.cart-icon{
+    z-index:2;
+}
+
+/* پاکت متحرک */
+.flying-box{
+    width:12px;
+    height:12px;
+    background:#00c3ff;
+    position:absolute;
+    border-radius:3px;
+    top:-8px;
+    left:-15px;
+    opacity:0;
+}
+
+/* انیمیشن */
+.cart-link:hover .flying-box{
+    animation:addToCart 1s ease forwards;
+}
+
+@keyframes addToCart{
+
+    0%{
+        transform:translate(0,0) scale(1);
+        opacity:1;
+    }
+
+    40%{
+        transform:translate(12px,5px) scale(1.2);
+        opacity:1;
+    }
+
+    70%{
+        transform:translate(22px,10px) scale(0.9);
+        opacity:1;
+    }
+
+    100%{
+        transform:translate(30px,18px) scale(0);
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   استایل کلی لینک ها
+========================= */
+
+
+
+/* افکت هاور کلی */
+.nav-link:hover{
+    color:#00d9ff;
+    background:rgba(255,255,255,0.06);
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,195,255,0.15);
+}
+
+/* خط زیر */
+.nav-link::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    right:50%;
+    width:0;
+    height:2px;
+    background:#00d9ff;
+    transition:0.4s;
+}
+
+.nav-link:hover::after{
+    width:80%;
+    right:10%;
+}
+
+/* =========================
+   آیکون ها
+========================= */
+
+.nav-icon{
+    width:22px;
+    height:22px;
+    transition:0.4s ease;
+}
+
+/* =========================
+   خانه
+========================= */
+
+.nav-link:hover .home-icon{
+    animation:homeJump 0.7s ease;
+}
+
+@keyframes homeJump{
+    0%{transform:translateY(0);}
+    30%{transform:translateY(-6px);}
+    60%{transform:translateY(2px);}
+    100%{transform:translateY(0);}
+}
+
+/* =========================
+   محصولات
+========================= */
+
+.nav-link:hover .product-icon{
+    animation:boxRotate 0.9s ease;
+}
+
+@keyframes boxRotate{
+    0%{transform:rotate(0);}
+    50%{transform:rotate(12deg) scale(1.15);}
+    100%{transform:rotate(0);}
+}
+
+/* =========================
+   درباره ما
+========================= */
+
+.nav-link:hover .about-icon{
+    animation:userPulse 1s ease;
+}
+
+@keyframes userPulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+
+/* =========================
+   تماس با ما
+========================= */
+
+.nav-link:hover .contact-icon{
+    animation:mailFly 0.9s ease;
+}
+
+@keyframes mailFly{
+    0%{
+        transform:translateX(0) rotate(0);
+    }
+
+    40%{
+        transform:translateX(5px) rotate(-10deg);
+    }
+
+    70%{
+        transform:translateX(-3px) rotate(8deg);
+    }
+
+    100%{
+        transform:translateX(0) rotate(0);
+    }
+}
+
+/* =========================
+   سبد خرید
+========================= */
+
+.cart-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.cart-icon{
+    z-index:2;
+}
+
+/* پاکت */
+.flying-box{
+    width:12px;
+    height:12px;
+    background:#00d9ff;
+    position:absolute;
+    border-radius:3px;
+    top:-8px;
+    left:-15px;
+    opacity:0;
+    box-shadow:0 0 12px #00d9ff;
+}
+
+.cart-link:hover .flying-box{
+    animation:addToCart 1s ease forwards;
+}
+
+.cart-link:hover .cart-icon{
+    animation:cartShake 0.7s ease;
+}
+
+@keyframes addToCart{
+
+    0%{
+        transform:translate(0,0) scale(1);
+        opacity:1;
+    }
+
+    40%{
+        transform:translate(12px,5px) scale(1.2);
+        opacity:1;
+    }
+
+    70%{
+        transform:translate(22px,10px) scale(0.9);
+        opacity:1;
+    }
+
+    100%{
+        transform:translate(30px,18px) scale(0);
+        opacity:0;
+    }
+}
+
+@keyframes cartShake{
+    0%{transform:rotate(0);}
+    25%{transform:rotate(-8deg);}
+    50%{transform:rotate(8deg);}
+    75%{transform:rotate(-4deg);}
+    100%{transform:rotate(0);}
+}
+
+/* =========================
+   پشتیبانی
+========================= */
+
+.nav-link:hover .support-icon{
+    animation:headphoneWave 1s ease;
+}
+
+@keyframes headphoneWave{
+    0%{
+        transform:rotate(0);
+    }
+
+    25%{
+        transform:rotate(-10deg);
+    }
+
+    50%{
+        transform:rotate(10deg);
+    }
+
+    75%{
+        transform:rotate(-5deg);
+    }
+
+    100%{
+        transform:rotate(0);
+    }
+}
+
+
+
+
+
+
+/* افکت کلیک */
+
+.nav-link.clicked{
+    animation:clickEffect 2s ease forwards;
+}
+
+/* انیمیشن */
+
+@keyframes clickEffect{
+
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    20%{
+        transform:scale(1.1);
+        box-shadow:0 0 20px #00d9ff;
+    }
+
+    40%{
+        transform:scale(0.95);
+    }
+
+    60%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(0.9);
+        opacity:0.5;
+        filter:blur(2px);
+    }
+}

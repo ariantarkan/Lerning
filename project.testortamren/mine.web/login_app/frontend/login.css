@@ -1,0 +1,23 @@
+body {
+    background-color: white;
+    min-width: 100wh;
+    background-color: rgb(65, 65, 65) ;
+}
+.user {
+    text-align: left;
+    position: relative;
+    top: 20vh;
+    left: 43%;
+    border-radius: 20px;
+    width: 20vh;
+    height: 5vh;
+}
+.password {
+    text-align: left;
+    position: relative;
+    top: 30vh;
+    left: 30%;
+    border-radius: 20px;
+    width: 20vh;
+    height: 5vh;
+}

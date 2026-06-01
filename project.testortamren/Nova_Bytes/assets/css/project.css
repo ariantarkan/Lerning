@@ -1,0 +1,258 @@
+            @font-face {
+            font-family: 'MyPersianFont';
+              src: url('../fonts/Vazir-Bold.woff2') format('woff2'); 
+            }
+            
+            
+            
+            body {
+            background-color: #0f1016;
+            color: #ffffff;
+            font-family: MyPersianFont;
+            margin: 0;
+            padding: 0;
+        }
+        
+        a { text-decoration: none; }
+
+
+        .back-home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #2c2c2c; /* رنگ پس‌زمینه دکمه متناسب با تم دارک */
+    color: #ffffff; /* رنگ آیکون */
+    border-radius: 50%; /* دایره‌ای کردن دکمه */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.back-home-btn:hover {
+    background-color: #444444; /* رنگ هنگام رفتن ماوس روی دکمه */
+    transform: scale(1.1); /* کمی بزرگ شدن در حالت هاور */
+    color: #00ffcc; /* تغییر رنگ آیکون (اختیاری) */
+}
+
+.back-home-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+        .project-card {
+            background-color: #1a1a2e;
+            border: 1px solid #6a0dad;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(106, 13, 173, 0.4);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            color: #00d2ff;
+        }
+
+        .card-content p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            background-color: rgba(106, 13, 173, 0.2);
+            color: #d187ff;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(106, 13, 173, 0.5);
+        }
+
+        .card-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background-color: #6a0dad;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+            flex: 1;
+        }
+
+        .btn-primary:hover { background-color: #8a2be2; }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #00d2ff;
+            border: 1px solid #00d2ff;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .btn-secondary:hover {
+            background-color: #00d2ff;
+            color: #0f1016;
+        }
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background-color: #1a1a2e;
+            color: #fff;
+            border: 2px solid #6a0dad;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #6a0dad;
+            box-shadow: 0 0 15px rgba(106, 13, 173, 0.5);
+        }
+
+        .project-grid {
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 15px;
+        }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: linear-gradient(145deg, #16213e, #0f3460);
+            border: 1px solid #6a0dad;
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            color: white;
+            position: relative;
+            box-shadow: 0 0 30px rgba(106, 13, 173, 0.3);
+            animation: modalFadeIn 0.3s ease;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close-btn:hover {
+            color: #fff;
+        }
+        #modal-title {
+            margin-top: 0;
+            color: #00d2ff;
+            margin-bottom: 15px;
+        }
+        #modal-desc {
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+            header p {
+                font-size: 0.9rem;
+                padding: 0 15px;
+            }
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            .modal-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .filter-container {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0 20px;
+            }
+            .card-buttons {
+
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .card-buttons a, .card-buttons button {
+                width: 100%;
+                text-align: center;
+            }
+        }

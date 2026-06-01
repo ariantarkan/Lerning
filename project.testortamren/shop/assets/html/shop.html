@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>سبد خرید</title>
+    <link rel="stylesheet" href="/project.testortamren/shop/assets/css/shop.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <!-- منوی موبایل -->
+          <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+
+          <!-- منو -->
+          <nav class="nav-menu" id="nav-menu">
+            <a href="index.html" class="nav-link">
+              <!-- خانه -->
+              <svg class="nav-icon home-icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M3 11L12 4L21 11V20H14V14H10V20H3V11Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              صفحه اصلی
+            </a>
+
+            <a href="#products" class="nav-link">
+              <!-- محصولات -->
+              <svg
+                class="nav-icon product-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M20 7L12 3L4 7L12 11L20 7Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M4 7V17L12 21L20 17V7"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+              محصولات
+            </a>
+
+            <a href="#about" class="nav-link">
+              <!-- درباره ما -->
+              <svg class="nav-icon about-icon" viewBox="0 0 24 24" fill="none">
+                <circle
+                  cx="12"
+                  cy="7"
+                  r="4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M5.5 21C6.5 17.5 9 16 12 16C15 16 17.5 17.5 18.5 21"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              درباره ما
+            </a>
+
+            <a href="#contact" class="nav-link">
+              <!-- تماس -->
+              <svg
+                class="nav-icon contact-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M4 5H20V19H4V5Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M4 7L12 13L20 7"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+              تماس با ما
+            </a>
+
+            <!-- سبد خرید -->
+            <a href="shop.html" class="nav-link cart-link">
+              <div class="cart-wrapper">
+                <!-- آیکون سبد -->
+                <svg class="nav-icon cart-icon" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M3 5H5L7 15H18L21 7H8"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="9" cy="20" r="1.5" fill="currentColor" />
+                  <circle cx="18" cy="20" r="1.5" fill="currentColor" />
+                </svg>
+
+                <!-- پاکت متحرک -->
+                <div class="flying-box"></div>
+              </div>
+
+              سبد خرید
+            </a>
+
+            <a href="sport.html" class="nav-link">
+              <!-- پشتیبانی -->
+              <svg
+                class="nav-icon support-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M18 8A6 6 0 0 0 6 8V15"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <rect
+                  x="3"
+                  y="15"
+                  width="4"
+                  height="6"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <rect
+                  x="17"
+                  y="15"
+                  width="4"
+                  height="6"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+              پشتیبانی
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="header">
+        <div class="title">سبد خرید</div>
+        <div class="badge" id="cartCountBadge">۰ آیتم</div>
+      </div>
+
+      <div class="layout">
+        <!-- لیست آیتم‌ها -->
+        <section class="card">
+          <div class="card-head">
+            <h2>محصولات</h2>
+            <button class="btn btn-ghost" style="width: auto" id="clearCartBtn">
+              خالی کردن
+            </button>
+          </div>
+          <div class="card-body">
+            <ul class="cart-list" id="cartItems"></ul>
+            <div class="empty" id="emptyState" style="display: none">
+              سبد خرید شما خالی است.
+            </div>
+          </div>
+        </section>
+
+        <!-- خلاصه -->
+        <aside class="card">
+          <div class="card-head">
+            <h2>جمع‌بندی</h2>
+          </div>
+          <div class="card-body">
+            <div class="summary-row">
+              <span>جمع کل</span>
+              <span id="cartTotal" style="color: var(--text); font-weight: 900"
+                >۰</span
+              >
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-primary" id="checkoutBtn">پرداخت</button>
+            </div>
+
+            <div class="muted-note">
+              این صفحه صرفاً نمایشی است. اگر خواستی لینک درگاه پرداخت هم اضافه
+              می‌کنم.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script src="/project.testortamren/shop/assets/js/cart.js"></script>
+  </body>
+</html>
